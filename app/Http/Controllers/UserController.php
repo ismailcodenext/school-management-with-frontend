@@ -138,17 +138,6 @@ class UserController extends Controller
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
     function UpdateProfile(Request $request){
 
         try{

@@ -44,7 +44,7 @@
                 hideLoader()
                 if(res.status===200 && res.data['status']==='success'){
                     setToken(res.data['token'])
-                    window.location.href="/userProfile";
+                    window.location.href="/dashboardSummary";
                 }
                 else{
                     errorToast(res.data['message']);

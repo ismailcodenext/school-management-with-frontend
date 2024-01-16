@@ -18,41 +18,6 @@ Route::post('/reset-password',[UserController::class,'ResetPassword'])->middlewa
 
 
 
-
-// Category Web API Routes
-Route::post("/create-category",[CategoryController::class,'CategoryCreate'])->middleware('auth:sanctum');
-Route::get("/list-category",[CategoryController::class,'CategoryList'])->middleware('auth:sanctum');
-Route::post("/delete-category",[CategoryController::class,'CategoryDelete'])->middleware('auth:sanctum');
-Route::post("/update-category",[CategoryController::class,'CategoryUpdate'])->middleware('auth:sanctum');
-Route::post("/category-by-id",[CategoryController::class,'CategoryByID'])->middleware('auth:sanctum');
-
-
-
-
-
-
-// Customer Web API Routes
-Route::post("/create-customer",[CustomerController::class,'CustomerCreate'])->middleware('auth:sanctum');
-Route::get("/list-customer",[CustomerController::class,'CustomerList'])->middleware('auth:sanctum');
-Route::post("/delete-customer",[CustomerController::class,'CustomerDelete'])->middleware('auth:sanctum');
-Route::post("/update-customer",[CustomerController::class,'CustomerUpdate'])->middleware('auth:sanctum');
-Route::post("/customer-by-id",[CustomerController::class,'CustomerByID'])->middleware('auth:sanctum');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Page Routes
 Route::view('/','pages.home');
 Route::view('/userLogin','pages.auth.login-page')->name('login');
@@ -61,9 +26,7 @@ Route::view('/sendOtp','pages.auth.send-otp-page');
 Route::view('/verifyOtp','pages.auth.verify-otp-page');
 Route::view('/resetPassword','pages.auth.reset-pass-page');
 Route::view('/userProfile','pages.dashboard.profile-page');
+Route::view('/dashboardSummary','pages.dashboard.dashboard-page');
 
-
-Route::view('/categoryPage','pages.dashboard.category-page');
-Route::view('/customerPage','pages.dashboard.customer-page');
 
 
