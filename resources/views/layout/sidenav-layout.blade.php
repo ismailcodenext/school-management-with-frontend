@@ -78,10 +78,10 @@
         <span class="side-bar-item-caption">Dashboard</span>
     </a>
 
-{{--    <a href="{{url("/customerPage")}}" class="side-bar-item">--}}
-{{--        <i class="bi bi-people"></i>--}}
-{{--        <span class="side-bar-item-caption">Customer</span>--}}
-{{--    </a>--}}
+    <a href="{{url("/teacherPage")}}" class="side-bar-item">
+        <i class="bi bi-people"></i>
+        <span class="side-bar-item-caption">Teacher</span>
+    </a>
 
 {{--    <a href="{{url("/categoryPage")}}" class="side-bar-item">--}}
 {{--        <i class="bi bi-list-nested"></i>--}}

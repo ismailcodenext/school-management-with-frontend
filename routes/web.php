@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,6 +14,15 @@ Route::post('/send-otp',[UserController::class,'SendOTPCode']);
 Route::post('/verify-otp',[UserController::class,'VerifyOTP']);
 Route::post('/reset-password',[UserController::class,'ResetPassword'])->middleware('auth:sanctum');
 
+// Teacher Web API Routes
+Route::post("/create-teacher",[TeacherController::class,'CreateTeacher'])->middleware('auth:sanctum');
+Route::get("/list-teacher",[TeacherController::class,'TeacherList'])->middleware('auth:sanctum');
+Route::post("/delete-teacher",[TeacherController::class,'DeleteTeacher'])->middleware('auth:sanctum');
+Route::post("/teacher-by-id",[TeacherController::class,'TeacherByID'])->middleware('auth:sanctum');
+Route::post("/update-teacher",[TeacherController::class,'UpdateTeacher'])->middleware('auth:sanctum');
+
+
+
 
 
 
@@ -27,6 +35,7 @@ Route::view('/verifyOtp','pages.auth.verify-otp-page');
 Route::view('/resetPassword','pages.auth.reset-pass-page');
 Route::view('/userProfile','pages.dashboard.profile-page');
 Route::view('/dashboardSummary','pages.dashboard.dashboard-page');
+Route::view('/teacherPage','pages.dashboard.teacher-page');
 
 
 
