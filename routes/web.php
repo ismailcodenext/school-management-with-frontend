@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\TopbarController;
+use App\Http\Controllers\BrandingController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +25,25 @@ Route::post("/update-teacher",[TeacherController::class,'UpdateTeacher'])->middl
 
 
 
+// topbar Web API Routes
+Route::post("/create-topbar",[TopbarController::class,'TopbarCreate'])->middleware('auth:sanctum');
+Route::get("/list-topbar",[TopbarController::class,'TopbarList'])->middleware('auth:sanctum');
+Route::post("/topbar-by-id",[TopbarController::class,'TopbarByID'])->middleware('auth:sanctum');
+Route::post("/update-topbar",[TopbarController::class,'TopbarUpdate'])->middleware('auth:sanctum');
+Route::post("/delete-topbar",[TopbarController::class,'TopbarDelete'])->middleware('auth:sanctum');
+
+
+
+
+// branding Web API Routes
+Route::post("/create-branding",[BrandingController::class,'BrandingCreate'])->middleware('auth:sanctum');
+Route::get("/list-branding",[BrandingController::class,'BrandingList'])->middleware('auth:sanctum');
+Route::post("/branding-by-id",[BrandingController::class,'BrandingByID'])->middleware('auth:sanctum');
+Route::post("/update-branding",[BrandingController::class,'BrandingUpdate'])->middleware('auth:sanctum');
+Route::post("/delete-branding",[BrandingController::class,'BrandingDelete'])->middleware('auth:sanctum');
+
+
+
 
 
 
@@ -36,6 +57,8 @@ Route::view('/resetPassword','pages.auth.reset-pass-page');
 Route::view('/userProfile','pages.dashboard.profile-page');
 Route::view('/dashboardSummary','pages.dashboard.dashboard-page');
 Route::view('/teacherPage','pages.dashboard.teacher-page');
+Route::view('/topbarPage','pages.dashboard.topbar-page');
+Route::view('/brandingPage','pages.dashboard.branding-page');
 
 
 
