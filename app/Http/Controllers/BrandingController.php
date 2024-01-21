@@ -18,8 +18,8 @@ class BrandingController extends Controller
             $t = time();
             $file_name = $img->getClientOriginalName();
             $img_name = "{$user_id}-{$t}-{$file_name}";
-            $img_url = "back-end/image/branding-logo/{$img_name}";
-            $img->move(public_path('back-end/image/branding-logo'), $img_name);
+            $img_url = "uploads/branding-logo/{$img_name}";
+            $img->move(public_path('uploads/branding-logo'), $img_name);
 
             Branding::create([
                 'logo' => $img_url,
@@ -86,10 +86,10 @@ class BrandingController extends Controller
                 $t = time();
                 $file_name = $img->getClientOriginalName();
                 $img_name = "{$user_id}-{$t}-{$file_name}";
-                $img_url = "back-end/image/branding-logo/{$img_name}";
+                $img_url = "uploads/branding-logo/{$img_name}";
 
                 // Upload File
-                $img->move(public_path('back-end/image/branding-logo'), $img_name);
+                $img->move(public_path('uploads/branding-logo'), $img_name);
 
 
                 if ($branding->logo && file_exists(public_path($branding->logo))) {
