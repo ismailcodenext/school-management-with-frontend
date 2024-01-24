@@ -6828,6 +6828,14 @@ fieldset:disabled .btn {
         max-width: 500px;
         margin: 1.75rem auto;
     }
+    .modal-dialog-copy{
+        max-width: 1200px;
+        margin: 1.75rem auto;
+    }
+    .modal-dialog-update{
+        max-width: 1450px;
+        margin: 1.75rem auto;
+    }
 
     .modal-dialog-scrollable {
         height: calc(100% - 3.5rem);

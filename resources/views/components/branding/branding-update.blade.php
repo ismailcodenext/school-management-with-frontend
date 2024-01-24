@@ -99,8 +99,8 @@ async function FillUpUpdateForm(id) {
             formData.append('address', Address_Update);
             formData.append('eiin', EIINCode_Update);
             formData.append('code', SchoolCode_Update);
-            formData.append('id', updateID);
             formData.append('img', BrandingLogo_Update);
+            formData.append('id', updateID);
 
             const config = {
                 headers: {

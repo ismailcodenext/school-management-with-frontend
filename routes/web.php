@@ -3,6 +3,7 @@
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TopbarController;
 use App\Http\Controllers\BrandingController;
+use App\Http\Controllers\FooterController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,7 +26,7 @@ Route::post("/update-teacher",[TeacherController::class,'UpdateTeacher'])->middl
 
 
 
-// topbar Web API Routes
+// Topbar Web API Routes
 Route::post("/create-topbar",[TopbarController::class,'TopbarCreate'])->middleware('auth:sanctum');
 Route::get("/list-topbar",[TopbarController::class,'TopbarList'])->middleware('auth:sanctum');
 Route::post("/topbar-by-id",[TopbarController::class,'TopbarByID'])->middleware('auth:sanctum');
@@ -35,12 +36,22 @@ Route::post("/delete-topbar",[TopbarController::class,'TopbarDelete'])->middlewa
 
 
 
-// branding Web API Routes
+// Branding Web API Routes
 Route::post("/create-branding",[BrandingController::class,'BrandingCreate'])->middleware('auth:sanctum');
 Route::get("/list-branding",[BrandingController::class,'BrandingList'])->middleware('auth:sanctum');
 Route::post("/branding-by-id",[BrandingController::class,'BrandingByID'])->middleware('auth:sanctum');
 Route::post("/update-branding",[BrandingController::class,'BrandingUpdate'])->middleware('auth:sanctum');
 Route::post("/delete-branding",[BrandingController::class,'BrandingDelete'])->middleware('auth:sanctum');
+
+
+
+
+// Footer Web API Routes
+Route::post("/create-footer",[FooterController::class,'FooterCreate'])->middleware('auth:sanctum');
+Route::get("/list-footer",[FooterController::class,'FooterList'])->middleware('auth:sanctum');
+Route::post("/footer-by-id",[FooterController::class,'FooterByID'])->middleware('auth:sanctum');
+Route::post("/update-footer",[FooterController::class,'FooterUpdate'])->middleware('auth:sanctum');
+Route::post("/delete-footer",[FooterController::class,'FooterDelete'])->middleware('auth:sanctum');
 
 
 
@@ -59,6 +70,7 @@ Route::view('/dashboardSummary','pages.dashboard.dashboard-page');
 Route::view('/teacherPage','pages.dashboard.teacher-page');
 Route::view('/topbarPage','pages.dashboard.topbar-page');
 Route::view('/brandingPage','pages.dashboard.branding-page');
+Route::view('/footerPage','pages.dashboard.footer-page');
 
 
 
