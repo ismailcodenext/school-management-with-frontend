@@ -98,6 +98,11 @@
         <span class="side-bar-item-caption">Footer</span>
     </a>
 
+    <a href="{{url("/institutionHistoryPage")}}" class="side-bar-item">
+        <i class="bi bi-people"></i>
+        <span class="side-bar-item-caption">Institution History</span>
+    </a>
+
 {{--    <a href="{{url("/categoryPage")}}" class="side-bar-item">--}}
 {{--        <i class="bi bi-list-nested"></i>--}}
 {{--        <span class="side-bar-item-caption">Category</span>--}}

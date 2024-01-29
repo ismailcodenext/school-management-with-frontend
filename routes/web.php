@@ -5,6 +5,7 @@ use App\Http\Controllers\TopbarController;
 use App\Http\Controllers\BrandingController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\InstituteHistoryController;
 use Illuminate\Support\Facades\Route;
 
 // User Web API Routes
@@ -18,11 +19,11 @@ Route::post('/verify-otp',[UserController::class,'VerifyOTP']);
 Route::post('/reset-password',[UserController::class,'ResetPassword'])->middleware('auth:sanctum');
 
 // Teacher Web API Routes
-Route::post("/create-teacher",[TeacherController::class,'CreateTeacher'])->middleware('auth:sanctum');
+Route::post("/create-teacher",[TeacherController::class,'TeacherCreate'])->middleware('auth:sanctum');
 Route::get("/list-teacher",[TeacherController::class,'TeacherList'])->middleware('auth:sanctum');
-Route::post("/delete-teacher",[TeacherController::class,'DeleteTeacher'])->middleware('auth:sanctum');
+Route::post("/delete-teacher",[TeacherController::class,'TeacherDelete'])->middleware('auth:sanctum');
 Route::post("/teacher-by-id",[TeacherController::class,'TeacherByID'])->middleware('auth:sanctum');
-Route::post("/update-teacher",[TeacherController::class,'UpdateTeacher'])->middleware('auth:sanctum');
+Route::post("/update-teacher",[TeacherController::class,'TeacherUpdate'])->middleware('auth:sanctum');
 
 
 
@@ -74,3 +75,39 @@ Route::view('/footerPage','pages.dashboard.footer-page');
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ismail work bellow
+
+
+
+// Institute History API Routes
+Route::post("/create-institute-history",[InstituteHistoryController::class,'InstituteHistoryCreate'])->middleware('auth:sanctum');
+Route::get("/list-institute-history",[InstituteHistoryController::class,'InstituteHistoryList'])->middleware('auth:sanctum');
+Route::post("/delete-institute-history",[InstituteHistoryController::class,'InstituteHistoryDelete'])->middleware('auth:sanctum');
+Route::post("/institute-history-by-id",[InstituteHistoryController::class,'InstituteHistoryByID'])->middleware('auth:sanctum');
+Route::post("/update-institute-history",[InstituteHistoryController::class,'InstituteHistoryUpdate'])->middleware('auth:sanctum');
+
+
+
+
+// Page Routes
+Route::view('/institutionHistoryPage','pages.dashboard.institute-history-page');
