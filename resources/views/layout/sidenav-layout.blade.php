@@ -71,7 +71,7 @@
 </nav>
 
 
-<div id="sideNavRef" class="side-nav-open">
+<div id="sideNavRef" class="side-nav-open mt-4">
 
     <a href="{{url("/dashboardSummary")}}" class="side-bar-item">
         <i class="bi bi-graph-up"></i>
