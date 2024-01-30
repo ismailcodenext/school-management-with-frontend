@@ -1,0 +1,9 @@
+@extends('layout.home')
+@section('content')
+    @include('components.front-end.topbar-section')
+    @include('components.front-end.branding-section')
+    @include('components.front-end.nav-section')
+    @include('components.front-end.hero-section')
+    @include('components.front-end.main-content')
+    @include('components.front-end.footer-section')
+@endsection

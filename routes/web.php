@@ -60,7 +60,7 @@ Route::post("/delete-footer",[FooterController::class,'FooterDelete'])->middlewa
 
 
 // Page Routes
-Route::view('/','pages.home');
+Route::view('/','pages.front-end-page.home-page');
 Route::view('/userLogin','pages.auth.login-page')->name('login');
 Route::view('/userRegistration','pages.auth.registration-page');
 Route::view('/sendOtp','pages.auth.send-otp-page');
