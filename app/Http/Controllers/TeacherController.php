@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\File;
 
 class TeacherController extends Controller
 {
-    function CreateTeacher(Request $request){
+    function TeacherCreate(Request $request){
         try {
             $user_id=Auth::id();
             $img=$request->file('img');
@@ -62,21 +62,8 @@ class TeacherController extends Controller
         }
     }
 
-//    function DeleteTeacher(Request $request)
-//    {
-//        try {
-//            $user_id=Auth::id();
-//            $request->validate([
-//                "id"=> 'required|string',
-//            ]);
-//            Teacher::where('id',$request->input('id'))->where('user_id',$user_id)->delete();
-//            return response()->json(['status' => 'success', 'message' => "Request Successful"]);
-//        }catch (Exception $e){
-//            return response()->json(['status' => 'fail', 'message' => $e->getMessage()]);
-//        }
-//    }
 
-    function DeleteTeacher(Request $request)
+    function TeacherDelete(Request $request)
     {
         try {
             $user_id = Auth::id();
@@ -116,7 +103,7 @@ class TeacherController extends Controller
         }
     }
 
-    function UpdateTeacher(Request $request)
+    function TeacherUpdate(Request $request)
     {
         try {
             $user_id = Auth::id();

@@ -4,7 +4,7 @@
             <div class="card px-5 py-5">
                 <div class="row justify-content-between ">
                     <div class="align-items-center col">
-                        <h4>Teacher</h4>
+                        <h4>Principal Message </h4>
                     </div>
                     <div class="align-items-center col">
                         <button data-bs-toggle="modal" data-bs-target="#create-modal" class="float-end btn m-0  bg-gradient-primary">Create</button>
@@ -15,13 +15,10 @@
                     <thead>
                     <tr class="bg-light">
                         <th>SL</th>
-                        <th>Photo</th>
+                        <th>Principal Photo</th>
                         <th>Name</th>
-                        <th>Email</th>
                         <th>Designation</th>
-                        <th>Education</th>
-                        <th>Address</th>
-                        <th>Mobile</th>
+                        <th>Message</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -42,7 +39,7 @@
 
         try {
             showLoader();
-            let res=await axios.get("/list-teacher",HeaderToken());
+            let res=await axios.get("/list-principal-message",HeaderToken());
             hideLoader();
 
             let tableList=$("#tableList");
@@ -51,22 +48,18 @@
             tableData.DataTable().destroy();
             tableList.empty();
 
-            res.data['teacherData'].forEach(function (item,index) {
+            res.data['principalMessageData'].forEach(function (item,index) {
                 let row=`<tr>
 
                     <td>${index+1}</td>
                     <td><img class="w-60 h-auto" alt="" src="${item['img_url']}"></td>
-                    <td>${item['name']}</td>
-                    <td>${item['email']}</td>
+                    <td>${item['principal_name']}</td>
                     <td>${item['designation']}</td>
-                    <td>${item['education']}</td>
-                    <td>${item['address']}</td>
-                    <td>${item['mobile']}</td>
+                    <td>${item['principal_message']}</td>
                     <td>
                         <button data-id="${item['id']}" class="btn editBtn btn-sm btn-outline-success">Edit</button>
                         <button data-id="${item['id']}" class="btn deleteBtn btn-sm btn-outline-danger">Delete</button>
                     </td>
-
                  </tr>`
                 tableList.append(row)
             })
@@ -83,9 +76,11 @@
                 $("#deleteID").val(id);
             })
             new DataTable('#tableData',{
-                order:[[0,'desc']],
-                lengthMenu:[5,10,15,20,30]
-            });
+                    order:[[0,'desc']],
+                    lengthMenu:[5,10,15,20,30]
+                }
+            );
+
         }catch (e) {
             unauthorized(e.response.status)
         }

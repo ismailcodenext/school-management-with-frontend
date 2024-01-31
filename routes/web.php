@@ -6,6 +6,7 @@ use App\Http\Controllers\BrandingController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\InstituteHistoryController;
+use App\Http\Controllers\PrincipalMessageController;
 use Illuminate\Support\Facades\Route;
 
 // User Web API Routes
@@ -112,7 +113,14 @@ Route::post("/institute-history-by-id",[InstituteHistoryController::class,'Insti
 Route::post("/update-institute-history",[InstituteHistoryController::class,'InstituteHistoryUpdate'])->middleware('auth:sanctum');
 
 
+// Principal Message API Routes
+Route::get("/list-principal-message",[PrincipalMessageController::class,'PrincipalMessageList'])->middleware('auth:sanctum');
+Route::post("/principal-message-by-id",[PrincipalMessageController::class,'PrincipalMessageByID'])->middleware('auth:sanctum');
+Route::post("/create-principal-message",[PrincipalMessageController::class,'PrincipalMessageCreate'])->middleware('auth:sanctum');
+Route::post("/delete-principal-message",[PrincipalMessageController::class,'PrincipalMessageDelete'])->middleware('auth:sanctum');
+Route::post("/update-principal-message",[PrincipalMessageController::class,'PrincipalMessageUpdate'])->middleware('auth:sanctum');
 
 
 // Page Routes
 Route::view('/institutionHistoryPage','pages.dashboard.institute-history-page');
+Route::view('/principalMessagePage','pages.dashboard.principal-message-page');
