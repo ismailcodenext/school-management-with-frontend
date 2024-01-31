@@ -494,7 +494,7 @@
                       class="admission_content_card_text admission_content_card_texts"
                     >
                       <h2 class="mt-2">
-                        <a href="./admission-form.html">Admission Form</a>
+                        <a href="{{url('/admission-form')}}">Admission Form</a>
                       </h2>
                     </div>
                   </div>

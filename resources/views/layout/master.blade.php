@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pabna International School | Home</title>
+    <title>Pabna International School |  @yield('title')</title>
 
     <!-- Link Swiper's CSS Start -->
     <link
@@ -19,9 +19,25 @@
     />
     <!-- Font Awesome Icon CDN CSS End -->
 
-    <!-- Main CSS Start -->
+    <!-- Style CSS Start -->
     <link rel="stylesheet" href="{{asset('front-end/assets/css/style.css')}}" />
-    <!-- Main CSS End -->
+    <!-- Style CSS End -->
+
+        <!-- Principals CSS Start -->
+        <link rel="stylesheet" href="{{asset('front-end/assets/css/principals-message.css')}}" />
+        <!-- Principals CSS End -->
+
+         <!-- Teachers CSS Start -->
+    <link rel="stylesheet" href="{{asset('front-end/assets/css/teachers-information.css')}}" />
+    <!-- Teachers CSS End -->
+
+   <!-- Admission CSS Start -->
+   <link rel="stylesheet" href="{{asset('front-end/assets/css/admission-form.css')}}" />
+   <!-- Admission CSS End -->
+
+        <!-- Contact CSS Start -->
+        <link rel="stylesheet" href="{{asset('front-end/assets/css/contact.css')}}" />
+        <!-- Contact CSS End -->
 
     <!-- Bootstrap CSS Link Start -->
     <link rel="stylesheet" href="{{asset('front-end/assets/css/bootstrap/bootstrap.min.css')}}" />

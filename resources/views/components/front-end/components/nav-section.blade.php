@@ -6,7 +6,7 @@
               ><i class="fa-solid fa-bars-staggered"></i
             ></span>
             <ul class="nav_items">
-              <li class="nav-item"><a href="#">হোম</a></li>
+              <li class="nav-item"><a href="{{url('/home')}}">হোম</a></li>
               <li>
                 <a href="#"
                   >পরিচিতি<img src="{{asset('front-end/assets/icon/Vector.svg')}}" alt=""
@@ -17,7 +17,7 @@
                     <a class="nav-link" href="#">এক নজরে স্কুল</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="./principal's-message.html"
+                    <a class="nav-link" href="{{url('/principal-message')}}"
                       >অধ্যক্ষের বাণী</a
                     >
                   </li>
@@ -31,7 +31,7 @@
                     <a class="nav-link" href="#">কমপ্লেক্স</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="./teachers-information.html"
+                    <a class="nav-link" href="{{url('/teachers-information')}}"
                       >শিক্ষক মন্ডলীর তথ্যাবলী</a
                     >
                   </li>
@@ -237,7 +237,7 @@
                   </li>
                 </ul>
               </li>
-              <li><a href="./contact.html">যোগাযোগ</a></li>
+              <li><a href="{{url('/contact-us')}}">যোগাযোগ</a></li>
             </ul>
           </div>
         </nav>

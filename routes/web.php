@@ -76,7 +76,12 @@ Route::view('/footerPage','pages.dashboard.footer-page');
 
 
 
-
+// front-end-page Route
+Route::view('/home','pages.front-end-page.home-page');
+Route::view('/principal-message','pages.front-end-page.principals-message-page');
+Route::view('/teachers-information','pages.front-end-page.Teachers-Information-page');
+Route::view('/contact-us','pages.front-end-page.contact-page');
+Route::view('/admission-form','pages.front-end-page.admission-form-page');
 
 
 
