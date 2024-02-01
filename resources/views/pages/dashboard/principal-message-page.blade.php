@@ -3,5 +3,6 @@
     @include('components.principal-message.principal-message-list')
     @include('components.principal-message.principal-message-delete')
     @include('components.principal-message.principal-message-create')
-{{--    @include('components.teacher.teacher-update')--}}
+    @include('components.principal-message.principal-message-update')
+
 @endsection

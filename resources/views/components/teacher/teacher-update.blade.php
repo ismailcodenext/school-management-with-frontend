@@ -9,8 +9,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-12 p-1">
-                                <label class="form-label">Teacher</label>
-                                <label class="form-label mt-2">Name</label>
+                                <label class="form-label mt-2">Teacher Name</label>
                                 <input type="text" class="form-control" id="teacherNameUpdate">
                                 <label class="form-label mt-2">Email</label>
                                 <input type="text" class="form-control" id="teacherEmailUpdate">

@@ -91,29 +91,29 @@ class PrincipalMessageController extends Controller
     function PrincipalMessageUpdate(Request $request){
         try {
             $user_id = Auth::id();
-            $request->validate([
-                'id' => 'required|string',
-//                'institution_image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust the validation as needed
-                'principal_name' => 'required|string',
-                'designation' => 'required|string',
-                'principal_message' => 'required|string',
-                // Add other validation rules as needed
-            ]);
+            $principal_message_data = PrincipalMessage::find($request->input('id'));
 
-            $principal_message = PrincipalMessage::where('id', $request->input('id'))->where('user_id', $user_id)->first();
-
-            if (!$principal_message) {
-                return response()->json(['status' => 'fail', 'message' => 'Principal Message not found or unauthorized access.']);
+            if (!$principal_message_data || $principal_message_data->user_id != $user_id) {
+                return response()->json(['status' => 'fail', 'message' => 'Principal Image not found or unauthorized access.']);
             }
+//            $request->validate([
+//                'id' => 'required|string',
+//                'principal_name' => 'required|string',
+//                'designation' => 'required|string',
+//                'principal_message' => 'required|string',
+//                // Add other validation rules as needed
+//            ]);
 
             // Update fields
-            $principal_message->principal_message = $request->input('institution_description');
+            $principal_message_data->principal_name = $request->input('principal_name');
+            $principal_message_data->designation = $request->input('designation');
+            $principal_message_data->principal_message = $request->input('principal_message');
 
             // Update image file if provided
             if ($request->hasFile('img_url')) {
                 // Delete the existing image file from the uploads directory
-                if ($principal_message->img_url && File::exists(public_path($principal_message->img_url))) {
-                    File::delete(public_path($principal_message->img_url));
+                if ($principal_message_data->img_url && File::exists(public_path($principal_message_data->img_url))) {
+                    File::delete(public_path($principal_message_data->img_url));
                 }
 
                 // Upload the new image file
@@ -121,17 +121,17 @@ class PrincipalMessageController extends Controller
                 $t = time();
                 $file_name = $img->getClientOriginalName();
                 $img_name = "{$user_id}-{$t}-{$file_name}";
-                $img_url = "uploads/{$img_name}";
+                $img_url = "uploads/principal_img{$img_name}";
 
                 // Move and save the new image
-                $img->move(public_path('uploads'), $img_name);
+                $img->move(public_path('uploads/principal_img'), $img_name);
 
                 // Update the institution_image field
-                $principal_message->institution_image = $img_url;
+                $principal_message_data->img_url = $img_url;
             }
 
             // Save the changes
-            $principal_message->save();
+            $principal_message_data->save();
 
             return response()->json(['status' => 'success', 'message' => 'Principal Message updated successfully']);
         } catch (Exception $e) {

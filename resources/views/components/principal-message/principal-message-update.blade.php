@@ -10,11 +10,11 @@
                         <div class="row">
                             <div class="col-12 p-1">
                                 <label class="form-label">Principal Name</label>
-                                <input type="text" class="form-control" id="principalName">
+                                <input type="text" class="form-control" id="principalNameUpdate">
                                 <label class="form-label">Designation</label>
-                                <input type="text" class="form-control" id="principalDesignation">
+                                <input type="text" class="form-control" id="principalDesignationUpdate">
                                 <label class="form-label">Message</label>
-                                <input type="text" class="form-control" id="principalMessage">
+                                <input type="text" class="form-control" id="principalMessageUpdate">
                                 <input type="text" class="d-none" id="updateID">
                                 <br/>
                                 <img class="w-15" id="oldImg" src="{{ asset('images/default.jpg') }}"/>
@@ -36,10 +36,22 @@
 </div>
 
 <script>
-    async function updatePreview(input) {
-        // Display the selected image in the preview
+    // async function updatePreview(input) {
+    //     // Display the selected image in the preview
+    //     const oldImg = document.getElementById('oldImg');
+    //     oldImg.src = window.URL.createObjectURL(input.files[0]);
+    // }
+
+    async function updatePreview(input, imageUrl) {
         const oldImg = document.getElementById('oldImg');
-        oldImg.src = window.URL.createObjectURL(input.files[0]);
+
+        if (input.files && input.files[0]) {
+            oldImg.src = window.URL.createObjectURL(input.files[0]);
+        } else if (imageUrl) {
+            oldImg.src = imageUrl;
+        } else {
+            oldImg.src = "{{ asset('images/default.jpg') }}";
+        }
     }
 
     async function FillUpUpdateForm(id) {
@@ -48,15 +60,18 @@
             showLoader();
 
             // Fetch teacher information by ID
-            let res = await axios.post("/institute-history-by-id", { id: id.toString() }, HeaderToken());
+            let res = await axios.post("/principal-message-by-id", { id: id.toString() }, HeaderToken());
 
             hideLoader();
 
             // Fill up the form with retrieved data
             let data = res.data.rows;
-            document.getElementById('instituteHistoryDescription').value = data.institution_description;
+            document.getElementById('principalNameUpdate').value = data.principal_name;
+            document.getElementById('principalDesignationUpdate').value = data.designation;
+            document.getElementById('principalMessageUpdate').value = data.principal_message;
             // Update the preview based on the existing image URL
-            updatePreview({ files: [data.institution_image ? new File([], data.institution_image.split('/').pop()) : null] });
+            // updatePreview({ files: [data.img_url ? new File([], data.img_url.split('/').pop()) : null] });
+            updatePreview(document.getElementById('principalMessageImgUpdate'), data.img_url);
 
         } catch (e) {
             // Handle unauthorized access or other errors
@@ -67,12 +82,14 @@
     async function update() {
         try {
             // Retrieve values from the form
-            let instituteHistoryDescription = document.getElementById('instituteHistoryDescription').value;
+            let principalNameUpdate = document.getElementById('principalNameUpdate').value;
+            let principalDesignationUpdate = document.getElementById('principalDesignationUpdate').value;
+            let principalMessageUpdate = document.getElementById('principalMessageUpdate').value;
             let updateID = document.getElementById('updateID').value;
-            let instituteHistoryImgUpdate = document.getElementById('instituteHistoryImgUpdate').files[0];
+            let principalMessageImgUpdate = document.getElementById('principalMessageImgUpdate').files[0];
 
             // Check for empty fields
-            if (!instituteHistoryDescription || !updateID) {
+            if (!principalNameUpdate || !principalDesignationUpdate ||!principalMessageUpdate || !updateID) {
                 errorToast("All fields are required!");
                 return;
             }
@@ -81,9 +98,11 @@
 
             // FormData for handling file uploads
             let formData = new FormData();
-            formData.append('institution_description', instituteHistoryDescription);
+            formData.append('principal_name', principalNameUpdate);
+            formData.append('designation', principalDesignationUpdate);
+            formData.append('principal_message', principalMessageUpdate);
             formData.append('id', updateID);
-            formData.append('institution_image', instituteHistoryImgUpdate);
+            formData.append('img', principalMessageImgUpdate);
 
             // Include headers for authentication
             const config = {
@@ -95,7 +114,7 @@
 
             showLoader();
             // Make the POST request to update teacher information
-            let res = await axios.post("/update-institute-history", formData, config);
+            let res = await axios.post("/update-principal-message", formData, config);
             hideLoader();
 
             if (res.data.status === "success") {
