@@ -495,7 +495,7 @@ width: 350px;
     color: var(--primary-color);
     font-weight: 500;
 }
-#contact_form {
+.contact_form {
     margin-top: 40px;
 }
 

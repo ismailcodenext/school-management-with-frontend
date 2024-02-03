@@ -6,6 +6,7 @@ use App\Http\Controllers\BrandingController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\InstituteHistoryController;
+use App\Http\Controllers\UserMessageController;
 use App\Http\Controllers\PrincipalMessageController;
 use App\Http\Controllers\PhotoGalleryController;
 use Illuminate\Support\Facades\Route;
@@ -45,6 +46,15 @@ Route::get("/list-branding",[BrandingController::class,'BrandingList'])->middlew
 Route::post("/branding-by-id",[BrandingController::class,'BrandingByID'])->middleware('auth:sanctum');
 Route::post("/update-branding",[BrandingController::class,'BrandingUpdate'])->middleware('auth:sanctum');
 Route::post("/delete-branding",[BrandingController::class,'BrandingDelete'])->middleware('auth:sanctum');
+
+
+
+
+// User Message Web API Routes
+Route::post("/user-message-create",[UserMessageController::class,'UserMessageCreate'])->middleware('auth:sanctum');
+Route::get("/list-user-message",[UserMessageController::class,'UserMessageList'])->middleware('auth:sanctum');
+Route::post("/user-message-by-id",[UserMessageController::class,'UserMessageByID'])->middleware('auth:sanctum');
+Route::post("/delete-user-message",[UserMessageController::class,'UserMessageDelete'])->middleware('auth:sanctum');
 
 
 

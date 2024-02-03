@@ -16,7 +16,7 @@
                 <div class="contact_heading mt-2">
                     <h1>যোগাযোগ করুন</h1>
                 </div>
-                <form id="contact_form">
+                <form id="save-form" class="contact_form">
                     <div class="row">
                       
                         <div class="col-md-5">
@@ -24,7 +24,7 @@
                                 <div class="col-md-12">
                                     <div class="contact_location_box">
                                         <div class="location_box_img mt-3">
-                                            <a href="#"><img src="./assets/icon/location.svg" alt=""></a>
+                                            <a href="#"><img src="{{asset('front-end/assets/icon/location.svg')}}" alt=""></a>
                                         </div>
                                         <div class="location_box_heading ">
                                             <h1><a href="#">ঠিকানা</a></h1>
@@ -37,7 +37,7 @@
                                 <div class="col-md-12">
                                     <div class="contact_phn_box">
                                         <div class="phn_box_img mt-3">
-                                            <a href="tel: 01793683129"><img src="./assets/icon/phone.svg" alt=""></a>
+                                            <a href="tel: 01793683129"><img src="{{asset('front-end/assets/icon/phone.svg')}}" alt=""></a>
                                         </div>
                                         <div class="phn_box_heading ">
                                             <h1><a href="#">ফোন নম্বর</a></h1>
@@ -50,7 +50,7 @@
                                 <div class="col-md-12">
                                     <div class="contact_email_box">
                                         <div class="email_box_img mt-3">
-                                            <a href="mailto: shohan.cnits@gmail.com"><img src="./assets/icon/gmail.svg" alt=""></a>
+                                            <a href="mailto: shohan.cnits@gmail.com"><img src="{{asset('front-end/assets/icon/gmail.svg')}}" alt=""></a>
                                         </div>
                                         <div class="email_box_heading ">
                                             <h1><a href="mailto: shohan.cnits@gmail.com">ই-মেইল</a></h1>
@@ -67,13 +67,13 @@
                                 <div class="col-md-6 mt-4">
                                     <div class="contact_name ">
                                         <label for="">Name*</label> <br>
-                                        <input type="text" placeholder="Enter here...">
+                                        <input type="text" id="Name" placeholder="Enter here...">
                                     </div>
                                 </div>
                                 <div class="col-md-6 mt-4">
                                     <div class="contact_email">
                                         <label for="">Email*</label> <br>
-                                        <input type="email" placeholder="Enter here...">
+                                        <input type="email" id="Email" placeholder="Enter here...">
                                     </div>
                                 </div>
                             </div>
@@ -81,13 +81,13 @@
                                 <div class="col-md-6 mt-4">
                                     <div class="contact_number ">
                                         <label for="">Phone Number*</label> <br>
-                                        <input type="number" placeholder="Enter here...">
+                                        <input type="number" id="Number" placeholder="Enter here...">
                                     </div>
                                 </div>
                                 <div class="col-md-6 mt-4">
                                     <div class="contact_subject">
                                         <label for="">Subject*</label> <br>
-                                        <input type="text" placeholder="Enter here...">
+                                        <input type="text" id="Subject" placeholder="Enter here...">
                                     </div>
                                 </div>
                             </div>
@@ -96,7 +96,7 @@
                                 <div class="col-md-12 mt-4">
                                     <div class="contact_message ">
                                         <label for="">Message*</label> <br>
-                                        <textarea name="" id=""></textarea>
+                                        <textarea name="" id="Message"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +106,7 @@
                                 </div>
                                 <div class="col-md-6 mt-5">
                                     <div class="contact_btn ">
-                                        <button>SUBMIT</button>
+                                        <button onclick="Save()" id="save-btn">SUBMIT</button>
                                     </div>
                                 </div>
                             </div>
@@ -130,3 +130,62 @@
     </section>
     <!-- Contact End -->
 
+    <script>
+        async function Save() {
+            try {
+                let Name = document.getElementById('Name').value;
+                let Email = document.getElementById('Email').value;
+                let Number = document.getElementById('Number').value;
+                let Subject = document.getElementById('Subject').value;
+                let Message = document.getElementById('Message').value;
+
+    
+                if (Name.length === 0) {
+                    errorToast("Name Is Required !");
+                }
+                 else if (Email.length === 0) {
+                    errorToast("Email Is Required !");
+                }
+                 else if (Number.length === 0) {
+                    errorToast("Number Is Required !");
+                }
+                else if (Subject.length === 0) {
+                    errorToast("Subject Is Required !");
+                } 
+                else if (Message.length === 0) {
+                    errorToast("Message Required !");
+                } 
+                 else {
+                    document.getElementById('modal-close').click();
+                    let formData = new FormData();
+                    formData.append('name', Name);
+                    formData.append('email', Email);
+                    formData.append('number', Number);
+                    formData.append('subject', Subject);
+                    formData.append('message', Message);
+    
+                    const config = {
+                        headers: {
+                            'content-type': 'multipart/form-data',
+                            ...HeaderToken().headers
+                        }
+                    }
+    
+                    showLoader();
+                    let res = await axios.post("/user-message-create", formData, config);
+                    hideLoader();
+    
+                    if (res.data['status'] === "success") {
+                        successToast(res.data['message']);
+                        document.getElementById("save-form").reset();
+                        await getList();
+                    } else {
+                        errorToast(res.data['message'])
+                    }
+                }
+    
+            } catch (e) {
+                unauthorized(e.response.status)
+            }
+        }
+    </script>
