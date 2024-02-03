@@ -438,7 +438,7 @@
                       </p>
                     </div>
                     <div class="prinicpal_card_content_heading_btn">
-                      <a href="#">আরো পড়ুন</a>
+                      <a href="{{url('/principal-message')}}">আরো পড়ুন</a>
                     </div>
                   </div>
                 </div>
@@ -463,7 +463,7 @@
                       </p>
                     </div>
                     <div class="prinicpal_card_content_heading_btn">
-                      <a href="#">আরো পড়ুন</a>
+                      <a href="{{url('/vice-Principal-message')}}">আরো পড়ুন</a>
                     </div>
                   </div>
                 </div>
