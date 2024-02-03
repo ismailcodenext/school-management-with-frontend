@@ -9,6 +9,7 @@ use App\Http\Controllers\InstituteHistoryController;
 use App\Http\Controllers\UserMessageController;
 use App\Http\Controllers\PrincipalMessageController;
 use App\Http\Controllers\PhotoGalleryController;
+use App\Http\Controllers\BlogNewsController;
 use Illuminate\Support\Facades\Route;
 
 // User Web API Routes
@@ -140,7 +141,15 @@ Route::post("/photo-gallery-by-id",[PhotoGalleryController::class,'PhotoGalleryB
 Route::post("/create-photo-gallery",[PhotoGalleryController::class,'PhotoGalleryCreate'])->middleware('auth:sanctum');
 Route::post("/delete-photo-gallery",[PhotoGalleryController::class,'PhotoGalleryDelete'])->middleware('auth:sanctum');
 Route::post("/update-photo-gallery",[PhotoGalleryController::class,'PhotoGalleryUpdate'])->middleware('auth:sanctum');
+
+// Blog News API Routes
+Route::get("/list-blog-news",[BlogNewsController::class,'BlogNewsList'])->middleware('auth:sanctum');
+Route::post("/create-blog-news",[BlogNewsController::class,'BlogNewsCreate'])->middleware('auth:sanctum');
+
+
+
 // Page Routes
 Route::view('/institutionHistoryPage','pages.dashboard.institute-history-page');
 Route::view('/principalMessagePage','pages.dashboard.principal-message-page');
 Route::view('/photoGalleryPage','pages.dashboard.photo-gallery-page');
+Route::view('/bolgNewsPage','pages.dashboard.blog-news-page');
