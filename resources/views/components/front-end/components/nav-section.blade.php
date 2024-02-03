@@ -230,7 +230,7 @@
                 /></a>
                 <ul>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">ইনস্টিটিউট গ্যালারী</a>
+                    <a class="nav-link" href="{{url('/institute-gallary')}}">ইনস্টিটিউট গ্যালারী</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">ভিডিও গ্যালারী</a>

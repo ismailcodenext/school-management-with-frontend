@@ -27,13 +27,25 @@
         <link rel="stylesheet" href="{{asset('front-end/assets/css/principals-message.css')}}" />
         <!-- Principals CSS End -->
 
-         <!-- Teachers CSS Start -->
-    <link rel="stylesheet" href="{{asset('front-end/assets/css/teachers-information.css')}}" />
-    <!-- Teachers CSS End -->
+        <!--Vice Principals CSS Start -->
+        <link rel="stylesheet" href="{{asset('front-end/assets/css/vice-Principals message.css')}}" />
+        <!--Vice Principals CSS End -->
 
-   <!-- Admission CSS Start -->
-   <link rel="stylesheet" href="{{asset('front-end/assets/css/admission-form.css')}}" />
-   <!-- Admission CSS End -->
+        <!-- Teachers CSS Start -->
+        <link rel="stylesheet" href="{{asset('front-end/assets/css/teachers-information.css')}}" />
+        <!-- Teachers CSS End -->
+
+        <!-- Admission CSS Start -->
+        <link rel="stylesheet" href="{{asset('front-end/assets/css/admission-form.css')}}" />
+        <!-- Admission CSS End -->
+
+        <!-- Institute CSS Start -->
+        <link rel="stylesheet" href="{{asset('front-end/assets/css/institute-gallery.css')}}" />
+        <!-- Institute CSS End -->
+
+        <!-- Routing CSS Start -->
+        <link rel="stylesheet" href="{{asset('front-end/assets/css/class-routine.css')}}" />
+        <!-- Routing CSS End -->
 
         <!-- Contact CSS Start -->
         <link rel="stylesheet" href="{{asset('front-end/assets/css/contact.css')}}" />

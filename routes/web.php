@@ -79,10 +79,13 @@ Route::view('/footerPage','pages.dashboard.footer-page');
 
 // front-end-page Route
 Route::view('/home','pages.front-end-page.home-page');
-Route::view('/principal-message','pages.front-end-page.principals-message-page');
-Route::view('/teachers-information','pages.front-end-page.Teachers-Information-page');
-Route::view('/contact-us','pages.front-end-page.contact-page');
 Route::view('/admission-form','pages.front-end-page.admission-form-page');
+Route::view('/principal-message','pages.front-end-page.principals-message-page');
+Route::view('/vice-Principal-message','pages.front-end-page.vice-principals-message-page');
+Route::view('/teachers-information','pages.front-end-page.teachers-information-page');
+Route::view('/institute-gallary','pages.front-end-page.media.institute-gallary');
+Route::view('/contact-us','pages.front-end-page.contact-page');
+
 
 
 
