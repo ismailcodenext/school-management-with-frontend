@@ -39,7 +39,7 @@
 
         try {
             showLoader();
-            let res=await axios.get("/list-principal-message",HeaderToken());
+            let res=await axios.get("/list-photo-gallery",HeaderToken());
             hideLoader();
 
             let tableList=$("#tableList");
