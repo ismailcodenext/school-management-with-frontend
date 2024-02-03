@@ -7,6 +7,7 @@ use App\Http\Controllers\FooterController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\InstituteHistoryController;
 use App\Http\Controllers\PrincipalMessageController;
+use App\Http\Controllers\PhotoGalleryController;
 use Illuminate\Support\Facades\Route;
 
 // User Web API Routes
@@ -61,7 +62,7 @@ Route::post("/delete-footer",[FooterController::class,'FooterDelete'])->middlewa
 
 
 // Page Routes
-Route::view('/','pages.front-end-page.home-page');
+Route::view('/','pages.front-end-page.home.home-page');
 Route::view('/userLogin','pages.auth.login-page')->name('login');
 Route::view('/userRegistration','pages.auth.registration-page');
 Route::view('/sendOtp','pages.auth.send-otp-page');
@@ -123,7 +124,10 @@ Route::post("/create-principal-message",[PrincipalMessageController::class,'Prin
 Route::post("/delete-principal-message",[PrincipalMessageController::class,'PrincipalMessageDelete'])->middleware('auth:sanctum');
 Route::post("/update-principal-message",[PrincipalMessageController::class,'PrincipalMessageUpdate'])->middleware('auth:sanctum');
 
+// Photo Gallery API Routes
+Route::get("/list-photo-gallery",[PhotoGalleryController::class,'PhotoGalleryList'])->middleware('auth:sanctum');
 
 // Page Routes
 Route::view('/institutionHistoryPage','pages.dashboard.institute-history-page');
 Route::view('/principalMessagePage','pages.dashboard.principal-message-page');
+Route::view('/photoGalleryPage','pages.dashboard.photo-gallery-page');
