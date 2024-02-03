@@ -11,7 +11,7 @@ class PhotoGallery extends Model
     protected $fillable = [
         'title',
         'category',
-        'url',
+        'img_url',
         'user_id',
     ];
 }

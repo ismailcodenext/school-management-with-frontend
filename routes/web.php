@@ -136,7 +136,10 @@ Route::post("/update-principal-message",[PrincipalMessageController::class,'Prin
 
 // Photo Gallery API Routes
 Route::get("/list-photo-gallery",[PhotoGalleryController::class,'PhotoGalleryList'])->middleware('auth:sanctum');
-
+Route::post("/photo-gallery-by-id",[PhotoGalleryController::class,'PhotoGalleryByID'])->middleware('auth:sanctum');
+Route::post("/create-photo-gallery",[PhotoGalleryController::class,'PhotoGalleryCreate'])->middleware('auth:sanctum');
+Route::post("/delete-photo-gallery",[PhotoGalleryController::class,'PhotoGalleryDelete'])->middleware('auth:sanctum');
+Route::post("/update-photo-gallery",[PhotoGalleryController::class,'PhotoGalleryUpdate'])->middleware('auth:sanctum');
 // Page Routes
 Route::view('/institutionHistoryPage','pages.dashboard.institute-history-page');
 Route::view('/principalMessagePage','pages.dashboard.principal-message-page');
