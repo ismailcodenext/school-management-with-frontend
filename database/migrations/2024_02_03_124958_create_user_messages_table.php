@@ -11,18 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user__messages', function (Blueprint $table) {
+        Schema::create('user_messages', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
             $table->string('email')->nullable();
-            $table->string('number')->nullable();
+            $table->string('mobile')->nullable();
             $table->string('subject')->nullable();
             $table->string('message',2000)->nullable();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')
-                ->cascadeOnUpdate()->restrictOnDelete();
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 
@@ -31,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user__messages');
+        Schema::dropIfExists('user_messages');
     }
 };

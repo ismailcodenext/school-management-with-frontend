@@ -54,7 +54,6 @@
                     <td><img class="w-60 h-auto" alt="" src="${item['img_url']}"></td>
                     <td>${item['title']}</td>
                     <td>${item['category']}</td>
-                    <td>${item['principal_message']}</td>
                     <td>
                         <button data-id="${item['id']}" class="btn editBtn btn-sm btn-outline-success">Edit</button>
                         <button data-id="${item['id']}" class="btn deleteBtn btn-sm btn-outline-danger">Delete</button>

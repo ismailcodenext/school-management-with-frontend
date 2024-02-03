@@ -5,15 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User_Message extends Model
+class UserMessage extends Model
 {
     use HasFactory;
     protected $fillable = [
         'name',
         'email',
-        'number',
+        'mobile',
         'subject',
         'message',
-        'user_id'
     ];
 }

@@ -12,15 +12,15 @@ class UserMessageController extends Controller
     public function UserMessageCreate(Request $request)
     {
         try {
-            $user_id = Auth::id();
+//            $user_id = Auth::id();
 
             User_Message::create([
                 'name' => $request->input ('name'),
                 'email' => $request->input('email'),
-                'number' => $request->input('number'),
+                'mobile' => $request->input('mobile'),
                 'subject' => $request->input('subject'),
                 'message' => $request->input('message'),
-                'user_id' => $user_id
+
             ]);
             return response()->json(['status' => 'success', 'message' => 'Message Send  Successful']);
         } catch (Exception $e) {
