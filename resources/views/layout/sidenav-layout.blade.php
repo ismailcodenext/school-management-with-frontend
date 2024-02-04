@@ -61,9 +61,11 @@
                     <a href="{{url('/userProfile')}}" class="side-bar-item">
                         <span class="side-bar-item-caption">Profile</span>
                     </a>
-                    <a href="{{url("/logout")}}" class="side-bar-item">
+                    <button  onclick="logout()" class="side-bar-item">
                         <span class="side-bar-item-caption">Logout</span>
-                    </a>
+                    </button>
+
+                    {{-- <></button> --}}
                 </div>
             </div>
         </div>
@@ -169,6 +171,19 @@
             content.classList.add("content");
         }
     }
+
+    async function logout() {
+
+try {
+    let res = await axios.get("/user-logout", HeaderToken());
+    localStorage.clear();
+    sessionStorage.clear();
+    window.location.href = "/";
+} catch (e) {
+    errorToast(res.data['message']);
+}
+}
+
 </script>
 
 </body>

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\User_Message;
+use App\Models\UserMessage;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
@@ -14,7 +14,7 @@ class UserMessageController extends Controller
         try {
 //            $user_id = Auth::id();
 
-            User_Message::create([
+            UserMessage::create([
                 'name' => $request->input ('name'),
                 'email' => $request->input('email'),
                 'mobile' => $request->input('mobile'),
