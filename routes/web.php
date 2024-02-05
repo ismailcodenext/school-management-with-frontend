@@ -146,6 +146,9 @@ Route::post("/update-photo-gallery",[PhotoGalleryController::class,'PhotoGallery
 // Blog News API Routes
 Route::get("/list-blog-news",[BlogNewsController::class,'BlogNewsList'])->middleware('auth:sanctum');
 Route::post("/create-blog-news",[BlogNewsController::class,'BlogNewsCreate'])->middleware('auth:sanctum');
+Route::post("/delete-blog-news",[BlogNewsController::class,'BlogNewsDelete'])->middleware('auth:sanctum');
+Route::post("/update-blog-news",[BlogNewsController::class,'BlogNewsUpdate'])->middleware('auth:sanctum');
+Route::post("/blog-news-by-id",[BlogNewsController::class,'BlogNewsByID'])->middleware('auth:sanctum');
 
 
 

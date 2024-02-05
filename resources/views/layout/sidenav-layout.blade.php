@@ -25,9 +25,6 @@
     <script src="{{asset('js/config.js')}}"></script>
     <script src="{{asset('js/bootstrap.bundle.js')}}"></script>
 
-
-
-
 </head>
 
 <body>
