@@ -61,8 +61,6 @@
                     <button  onclick="logout()" class="side-bar-item">
                         <span class="side-bar-item-caption">Logout</span>
                     </button>
-
-                    {{-- <></button> --}}
                 </div>
             </div>
         </div>
@@ -172,10 +170,10 @@
     async function logout() {
 
 try {
-    let res = await axios.get("/user-logout", HeaderToken());
+    let res = await axios.get("/logout", HeaderToken());
     localStorage.clear();
     sessionStorage.clear();
-    window.location.href = "/";
+    window.location.href = "/userLogin";
 } catch (e) {
     errorToast(res.data['message']);
 }

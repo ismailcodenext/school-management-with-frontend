@@ -1,5 +1,9 @@
 <?php
+// front-end controller
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdmissionFormController;
 
+// back-end controller 
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TopbarController;
 use App\Http\Controllers\BrandingController;
@@ -16,8 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('/user-registration',[UserController::class,'UserRegistration']);
 Route::post('/user-login',[UserController::class,'UserLogin']);
 Route::get('/user-profile',[UserController::class,'UserProfile'])->middleware('auth:sanctum');
-// Route::get('/logout',[UserController::class,'UserLogout'])->middleware('auth:sanctum');
-Route::get('/user-logout', [UserController::class, 'UserLogout'])->middleware('auth:sanctum');
+Route::get('/logout', [UserController::class, 'UserLogout'])->middleware('auth:sanctum');
 Route::post('/user-update',[UserController::class,'UpdateProfile'])->middleware('auth:sanctum');
 Route::post('/send-otp',[UserController::class,'SendOTPCode']);
 Route::post('/verify-otp',[UserController::class,'VerifyOTP']);
@@ -91,9 +94,14 @@ Route::view('/footerPage','pages.dashboard.footer-page');
 
 
 // front-end-page Route
-Route::view('/home','pages.front-end-page.home.home-page');
-Route::view('/admission-form','pages.front-end-page.home.admission-form-page');
+// 
+
+Route::get('/home',[HomeController::class,'HomePage']);
+Route::get('/home-list',[HomeController::class,'HomeList']);
+Route::get('/admission-form',[AdmissionFormController::class,'AdmissionFormPage']);
+
 Route::view('/vice-Principal-message','pages.front-end-page.home.vice-principals-message-page');
+Route::view('/class-routing','pages.front-end-page.class-routing.class-routing-page');
 Route::view('/principal-message','pages.front-end-page.introduction.principals-message-page');
 Route::view('/teachers-information','pages.front-end-page.introduction.teachers-information-page');
 Route::view('/institute-gallary','pages.front-end-page.media.institute-gallary');

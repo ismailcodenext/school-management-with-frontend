@@ -1,13 +1,18 @@
-
     <!-- Hero Start -->
     <section id="principal_hero">
         <div class="container">
             <div class="principal_hero_content">
                 <h1>অধ্যক্ষের বানী</h1>
+           
             </div>
+           <div class="principal_hero_img_line">
+            <img src="{{asset('front-end/assets/image/hero_bg_line_.png')}}" alt="">
+           </div>
         </div>
     </section>
     <!-- Hero End -->
+
+
 
     <!-- Principal Message Box Start -->
     <section id="principal_box">

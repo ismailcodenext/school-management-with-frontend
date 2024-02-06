@@ -5,6 +5,9 @@
             <div class="contact_hero_content">
                 <h1>যোগাযোগ</h1>
             </div>
+            <div class="contact_hero_img_line">
+                <img src="{{asset('front-end/assets/image/hero_bg_line_.png')}}" alt="">
+               </div>
         </div>
     </section>
     <!-- Hero End -->

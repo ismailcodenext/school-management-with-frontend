@@ -1,9 +1,13 @@
+ 
     <!-- Hero Start -->
     <section id="teacher_hero">
         <div class="container">
             <div class="teacher_hero_content">
                 <h1>শিক্ষক মন্ডলীর তথ্যাবলী</h1>
             </div>
+            <div class="teacher_hero_img_line">
+                <img src="{{asset('front-end/assets/image/hero_bg_line_.png')}}" alt="">
+               </div>
         </div>
     </section>
     <!-- Hero End -->

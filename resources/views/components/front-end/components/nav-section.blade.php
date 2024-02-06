@@ -66,6 +66,9 @@
                     <a class="nav-link" href="#">ছুটির তালিকা</a>
                   </li>
                   <li class="nav-item">
+                    <a class="nav-link" href="{{url('/class-routing')}}">ক্লাস রুটিন</a>
+                </li>
+                  <li class="nav-item">
                     <a class="nav-link" href="#">পরীক্ষার নোটিশ</a>
                   </li>
                   <li class="nav-item">

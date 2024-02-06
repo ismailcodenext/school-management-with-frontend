@@ -38,11 +38,12 @@
         <!-- Admission CSS Start -->
         <link rel="stylesheet" href="{{asset('front-end/assets/css/admission-form.css')}}" />
         <!-- Admission CSS End -->
-
+    
         <!-- Institute CSS Start -->
         <link rel="stylesheet" href="{{asset('front-end/assets/css/institute-gallery.css')}}" />
+        <link rel="stylesheet" href="{{asset('front-end/assets/css/lightbox.css')}}" />
         <!-- Institute CSS End -->
-
+        
         <!-- Routing CSS Start -->
         <link rel="stylesheet" href="{{asset('front-end/assets/css/class-routine.css')}}" />
         <!-- Routing CSS End -->
@@ -69,6 +70,14 @@
       
     <!-- Scripts -->
     <script src="{{asset('front-end/js/navbar.js')}}"></script>
+
+
+      <!-- Scripts -->
+  <script src="{{asset('front-end/js/navbar.js')}}"></script>
+  <script src="{{asset('front-end/js/tab.js')}}"></script>
+  <script src="{{asset('front-end/js/lightbox-plus-jquery.js')}}"></script>
+  <!-- Scripts -->
+
 
     <!-- Swiper JS Link -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
