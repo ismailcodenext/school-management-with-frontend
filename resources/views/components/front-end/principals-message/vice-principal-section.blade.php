@@ -7,7 +7,7 @@
            
             </div>
            <div class="principal_hero_img_line">
-            <img src="./assets/image/hero_bg_line_.png" alt="">
+            <img src="{{asset('front-end/assets/image/hero_bg_line_.png')}}" alt="">
            </div>
         </div>
     </section>

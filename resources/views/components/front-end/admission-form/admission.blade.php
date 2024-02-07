@@ -4,6 +4,9 @@
             <div class="admissison_hero_content">
                 <h1>Admission Form</h1>
             </div>
+            <div class="admissison_hero_img_line">
+                <img src="{{asset('front-end/assets/image/hero_bg_line_.png')}}" alt="">
+               </div>
         </div>
     </section>
     <!-- Hero End -->
