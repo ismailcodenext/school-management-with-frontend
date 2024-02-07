@@ -8,4 +8,14 @@
     @include('components.front-end.home-section.main-content')
     @include('components.front-end.components.footer-section')
 
+
+    <script>
+        (async () => {
+            await TopSection();
+        })()
+    </script>
+
+
 @endsection
+
+

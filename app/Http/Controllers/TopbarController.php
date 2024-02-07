@@ -13,7 +13,7 @@ class TopbarController extends Controller
 
     public function index(){
         $topbar=Topbar::first();
-        return  ResponseHelper::Out('success',$topbar,200);
+        return ResponseHelper::Out('success',$topbar,200);
     }
 
     public function TopbarCreate(Request $request):JsonResponse
@@ -81,9 +81,9 @@ class TopbarController extends Controller
                 'contact' => $request->input('contact'),
                 'email' => $request->input('email')
             ]);
-    
+
             return response()->json(['status' => 'success', 'message' => 'Topbar updated successfully']);
-    
+
         } catch (Exception $e) {
             return response()->json(['status' => 'fail', 'message' => $e->getMessage()]);
         }
@@ -101,6 +101,6 @@ class TopbarController extends Controller
             return response()->json(['status' => 'fail', 'message' => $e->getMessage()]);
         }
     }
-    
+
 
 }

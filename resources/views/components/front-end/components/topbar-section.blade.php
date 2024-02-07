@@ -30,7 +30,7 @@
                 </div>
 
 
-                
+
                 <div class="topbar_content_address">
                   <div class="topbar_img">
                     <a href="#">
@@ -45,15 +45,16 @@
         </div>
       </section>
       <!-- Topbar End -->
-      <script>
 
-Topbar();
-        async function Topbar(){
-          let res=await axios.get("/topbar-list");
-          console.log(res.data.data);
-          document.getElementById('address').innerText=res.data.data.address
-          document.getElementById('contact').innerText=res.data.data.contact
-          document.getElementById('email').innerText=res.data.data.email
-        }
-          
-    </script>
+  <script>
+
+      Topbar();
+    async function Topbar(){
+      let res=await axios.get("/topbar-list");
+      console.log(res.data.data);
+      document.getElementById('address').innerText=res.data.data.address
+      document.getElementById('contact').innerText=res.data.data.contact
+      document.getElementById('email').innerText=res.data.data.email
+    }
+
+</script>

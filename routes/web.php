@@ -3,7 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdmissionFormController;
 
-// back-end controller 
+// back-end controller
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TopbarController;
 use App\Http\Controllers\BrandingController;
@@ -94,23 +94,10 @@ Route::view('/footerPage','pages.dashboard.footer-page');
 
 
 // front-end-page Route
-// 
+//
 
 Route::get('/home',[HomeController::class,'HomePage']);
-
-
-
-
-
-
-
 Route::get('/topbar-list',[TopbarController::class,'index']);
-
-
-
-
-
-
 
 
 Route::get('/admission-form',[AdmissionFormController::class,'AdmissionFormPage']);
