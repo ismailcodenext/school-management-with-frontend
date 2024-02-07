@@ -82,6 +82,7 @@
     <!-- Swiper JS Link -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="{{asset('front-end/js/app.js')}}"></script>
+    <script src="{{asset('front-end/js/blog.js')}}"></script>
     <!-- Swiper JS Link -->
 
     <!-- JS File link -->

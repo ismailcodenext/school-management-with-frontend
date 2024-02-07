@@ -122,6 +122,118 @@
               </div>
               <!-- Notice Board End  -->
   
+          <!-- Institution Blog Start -->
+
+          <div id="institution_blog">
+            <div class="institution_blog_btn mt-5">
+              <a href="#">ব্লগ এবং খবর</a>
+            </div>
+            <div class="swiper myBlogSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="blog_card">
+                    <div class="blog_img">
+                      <img src="{{asset('front-end/assets/image/blog_card_img_01.png')}}" alt="">
+                    </div>
+                    <div class="blog_card_text p-4">
+                      <h5>০৫ ই জানুয়ারি, ২০২৪</h5>
+                      <h2>বার্ষিক ক্রীড়া প্রতিযোগিতা ২০২৪</h2>
+                      <p>বার্ষিক ক্রীড়া প্রতিযোগিতা-2024 বিভিন্ন ইভেন্টে অংশগ্রহনেচ্ছু শিক্ষার্থীদের অংশগ্রহণ
+                        প্রসঙ্গে...</p>
+                      <div class="blog_btn">
+                        <a href="#">আরো পড়ুন</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="blog_card">
+                    <div class="blog_img">
+                      <img src="{{asset('front-end/assets/image/blog_card_img_02.png')}}" alt="">
+                    </div>
+                    <div class="blog_card_text p-4">
+                      <h5>০৫ ই জানুয়ারি, ২০২৪</h5>
+                      <h2>বার্ষিক ক্রীড়া প্রতিযোগিতা ২০২৪</h2>
+                      <p>বার্ষিক ক্রীড়া প্রতিযোগিতা-2024 বিভিন্ন ইভেন্টে অংশগ্রহনেচ্ছু শিক্ষার্থীদের অংশগ্রহণ
+                        প্রসঙ্গে...</p>
+                      <div class="blog_btn">
+                        <a href="#">আরো পড়ুন</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="blog_card">
+                    <div class="blog_img">
+                      <img src="{{asset('front-end/assets/image/blog_card_img_01.png')}}" alt="">
+                    </div>
+                    <div class="blog_card_text p-4">
+                      <h5>০৫ ই জানুয়ারি, ২০২৪</h5>
+                      <h2>বার্ষিক ক্রীড়া প্রতিযোগিতা ২০২৪</h2>
+                      <p>বার্ষিক ক্রীড়া প্রতিযোগিতা-2024 বিভিন্ন ইভেন্টে অংশগ্রহনেচ্ছু শিক্ষার্থীদের অংশগ্রহণ
+                        প্রসঙ্গে...</p>
+                      <div class="blog_btn">
+                        <a href="#">আরো পড়ুন</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="blog_card">
+                    <div class="blog_img">
+                      <img src="{{asset('front-end/assets/image/blog_card_img_02.png')}}" alt="">
+                    </div>
+                    <div class="blog_card_text p-4">
+                      <h5>০৫ ই জানুয়ারি, ২০২৪</h5>
+                      <h2>বার্ষিক ক্রীড়া প্রতিযোগিতা ২০২৪</h2>
+                      <p>বার্ষিক ক্রীড়া প্রতিযোগিতা-2024 বিভিন্ন ইভেন্টে অংশগ্রহনেচ্ছু শিক্ষার্থীদের অংশগ্রহণ
+                        প্রসঙ্গে...</p>
+                      <div class="blog_btn">
+                        <a href="#">আরো পড়ুন</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="blog_card">
+                    <div class="blog_img">
+                      <img src="{{asset('front-end/assets/image/blog_card_img_02.png')}}" alt="">
+                    </div>
+                    <div class="blog_card_text p-4">
+                      <h5>০৫ ই জানুয়ারি, ২০২৪</h5>
+                      <h2>বার্ষিক ক্রীড়া প্রতিযোগিতা ২০২৪</h2>
+                      <p>বার্ষিক ক্রীড়া প্রতিযোগিতা-2024 বিভিন্ন ইভেন্টে অংশগ্রহনেচ্ছু শিক্ষার্থীদের অংশগ্রহণ
+                        প্রসঙ্গে...</p>
+                      <div class="blog_btn">
+                        <a href="#">আরো পড়ুন</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next swiper-button-nexts">
+                <div class="swiper_btn_img">
+                  <svg width="20" height="32" viewBox="0 0 20 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M1.696e-07 30.06L2.15625 32L20 16L2.15625 -1.55995e-06L2.6288e-06 1.93L15.6771 16L1.696e-07 30.06Z"
+                      fill="white" />
+                  </svg>
+                </div>
+              </div>
+              <div class="swiper-button-prev swiper-button-prevs ">
+                <div class="swiper_btn_img">
+                  <svg width="20" height="32" viewBox="0 0 20 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 1.94L17.8437 0L0 16L17.8437 32L20 30.07L4.32292 16L20 1.94Z" fill="white" />
+                  </svg>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- Institution Blog End -->
               <!-- Institution History Start ........ -->
               <div id="institution ">
                 <div class="institution_content mt-4">
