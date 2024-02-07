@@ -12,12 +12,10 @@
     </section>
     <!-- Hero End -->
 
-    @php
-    $TeacherInformations = \App\Models\Teacher::latest()->get();
-    @endphp
+
 
     <!-- Teachers_Information Start -->
-    <section id="teachers_information">
+    {{-- <section id="teachers_information">
         <div class="container">
             <div class="teachers_information_content ">
                 <div class="row">
@@ -69,5 +67,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Teachers_Information End -->

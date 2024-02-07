@@ -1,4 +1,5 @@
 @extends('layout.master')
+@section('title','Home')
 @section('content')
     @include('components.front-end.components.topbar-section')
     @include('components.front-end.components.branding-section')

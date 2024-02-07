@@ -97,7 +97,22 @@ Route::view('/footerPage','pages.dashboard.footer-page');
 // 
 
 Route::get('/home',[HomeController::class,'HomePage']);
-Route::get('/home-list',[HomeController::class,'HomeList']);
+
+
+
+
+
+
+
+Route::get('/topbar-list',[TopbarController::class,'index']);
+
+
+
+
+
+
+
+
 Route::get('/admission-form',[AdmissionFormController::class,'AdmissionFormPage']);
 
 Route::view('/vice-Principal-message','pages.front-end-page.home.vice-principals-message-page');

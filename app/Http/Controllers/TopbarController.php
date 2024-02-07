@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Topbar;
 use Exception;
+use App\Helper\ResponseHelper;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -10,6 +11,10 @@ use Illuminate\Http\Request;
 class TopbarController extends Controller
 {
 
+    public function index(){
+        $topbar=Topbar::first();
+        return  ResponseHelper::Out('success',$topbar,200);
+    }
 
     public function TopbarCreate(Request $request):JsonResponse
     {
