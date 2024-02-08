@@ -35,6 +35,10 @@
         <link rel="stylesheet" href="{{asset('front-end/assets/css/teachers-information.css')}}" />
         <!-- Teachers CSS End -->
 
+        <!-- Main CSS Start -->
+        <link rel="stylesheet" href="{{asset('front-end/assets/css/notice-page.css')}}" />
+        <!-- Main CSS End -->
+
         <!-- Admission CSS Start -->
         <link rel="stylesheet" href="{{asset('front-end/assets/css/admission-form.css')}}" />
         <!-- Admission CSS End -->

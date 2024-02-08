@@ -15,19 +15,18 @@
 
 
     <!-- Teachers_Information Start -->
-    {{-- <section id="teachers_information">
+    <section id="teachers_information">
         <div class="container">
             <div class="teachers_information_content ">
                 <div class="row">
-                    @foreach ($TeacherInformations as $TeacherInformation)
                     <div class="col-md-6 col-lg-4 mt-4">
                         <div class="teacher_cards">
                             <div class="teachers_img">
-                                <img src="{{$TeacherInformation->img_url}}" alt="">
+                                <img src="{{asset('front-end/assets/image/teachers_img_03.png')}}" alt="">
                             </div>
                             <div class="teachers_name mt-4">
-                                <h1>{{$TeacherInformation->name}}</h1>
-                                <p>{{$TeacherInformation->designation}}</p>
+                                <h1>ড. মোঃ মসিউর রহমান</h1>
+                                <p>প্রধান শিক্ষক (ভারপ্রাপ্ত)</p>
                             </div>
                             <div class="teachers_info">
                                 <div class="teachers_info_item">
@@ -35,7 +34,91 @@
                                         <span>শিক্ষাগত যোগ্যতা</span>
                                         <span>:</span>
                                     </div>
-                                    <span class="teachers_info_text">{{$TeacherInformation->education}}</span>
+                                    <span class="teachers_info_text">M.S.S. & B.ED</span>
+                                </div>
+                              
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1 ">
+                                        <span>ঠিকানা </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">পাবনা সদর, পাবনা</span>
+                                </div>
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1">
+                                        <span>মোবাইল নম্বর </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">+880 1720-415274</span>
+                                </div>
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1">
+                                        <span>ই- মেইল      </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">  mosiur@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mt-4">
+                        <div class="teacher_cards">
+                            <div class="teachers_img">
+                                <img src="{{asset('front-end/assets/image/teachers_img_02.png')}}" alt="">
+                            </div>
+                            <div class="teachers_name mt-4">
+                                <h1>মোঃ এনামুল হক (উপাধ্যক্ষ)</h1>
+                                <p>সহকারী প্রধান শিক্ষক</p>
+                            </div>
+                            <div class="teachers_info">
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title">
+                                        <span>শিক্ষাগত যোগ্যতা</span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text"> B.S.Sc & M.A.</span>
+                                </div>
+                     
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1 ">
+                                        <span>ঠিকানা </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">পাবনা সদর, পাবনা</span>
+                                </div>
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1">
+                                        <span>মোবাইল নম্বর </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">+880 1720-415274</span>
+                                </div>
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1">
+                                        <span>ই- মেইল      </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">  mosiur@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mt-4">
+                        <div class="teacher_cards">
+                            <div class="teachers_img">
+                                <img src="{{asset('front-end/assets/image/teachers_img_01.png')}}" alt="">
+                            </div>
+                            <div class="teachers_name mt-4">
+                                <h1>মোছাঃ রিফা আক্তার</h1>
+                                <p>সহকারী শিক্ষক</p>
+                            </div>
+                            <div class="teachers_info">
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title">
+                                        <span>শিক্ষাগত যোগ্যতা</span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text"> B.COM. & B.P.ED</span>
                                 </div>
 
                                 <div class="teachers_info_item">
@@ -43,29 +126,407 @@
                                         <span>ঠিকানা </span>
                                         <span>:</span>
                                     </div>
-                                    <span class="teachers_info_text">{{$TeacherInformation->address}}</span>
+                                    <span class="teachers_info_text">শায়েস্তাগঞ্জ, হবিগঞ্জ</span>
                                 </div>
                                 <div class="teachers_info_item">
                                     <div class="teachers_info_title mt-1">
                                         <span>মোবাইল নম্বর </span>
                                         <span>:</span>
                                     </div>
-                                    <span class="teachers_info_text">{{$TeacherInformation->mobile}}</span>
+                                    <span class="teachers_info_text">+880 1720-415274</span>
                                 </div>
                                 <div class="teachers_info_item">
                                     <div class="teachers_info_title mt-1">
-                                        <span>ইমেল</span>
+                                        <span>ই- মেইল      </span>
                                         <span>:</span>
                                     </div>
-                                    <span class="teachers_info_text">{{$TeacherInformation->email}}</span>
+                                    <span class="teachers_info_text">  mosiur@gmail.com</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                   @endforeach
+
+
+                    <div class="col-md-6 col-lg-4 mt-4">
+                        <div class="teacher_cards">
+                            <div class="teachers_img">
+                                <img src="{{asset('front-end/assets/image/teachers_img_03.png')}}" alt="">
+                            </div>
+                            <div class="teachers_name mt-4">
+                                <h1>ড. মোঃ মসিউর রহমান</h1>
+                                <p>প্রধান শিক্ষক (ভারপ্রাপ্ত)</p>
+                            </div>
+                            <div class="teachers_info">
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title">
+                                        <span>শিক্ষাগত যোগ্যতা</span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">M.S.S. & B.ED</span>
+                                </div>
+                              
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1 ">
+                                        <span>ঠিকানা </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">পাবনা সদর, পাবনা</span>
+                                </div>
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1">
+                                        <span>মোবাইল নম্বর </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">+880 1720-415274</span>
+                                </div>
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1">
+                                        <span>ই- মেইল      </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">  mosiur@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mt-4">
+                        <div class="teacher_cards">
+                            <div class="teachers_img">
+                                <img src="{{asset('front-end/assets/image/teachers_img_02.png')}}" alt="">
+                            </div>
+                            <div class="teachers_name mt-4">
+                                <h1>মোঃ এনামুল হক (উপাধ্যক্ষ)</h1>
+                                <p>সহকারী প্রধান শিক্ষক</p>
+                            </div>
+                            <div class="teachers_info">
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title">
+                                        <span>শিক্ষাগত যোগ্যতা</span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text"> B.S.Sc & M.A.</span>
+                                </div>
+                     
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1 ">
+                                        <span>ঠিকানা </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">পাবনা সদর, পাবনা</span>
+                                </div>
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1">
+                                        <span>মোবাইল নম্বর </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">+880 1720-415274</span>
+                                </div>
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1">
+                                        <span>ই- মেইল      </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">  mosiur@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mt-4">
+                        <div class="teacher_cards">
+                            <div class="teachers_img">
+                                <img src="{{asset('front-end/assets/image/teachers_img_01.png')}}" alt="">
+                            </div>
+                            <div class="teachers_name mt-4">
+                                <h1>মোছাঃ রিফা আক্তার</h1>
+                                <p>সহকারী শিক্ষক</p>
+                            </div>
+                            <div class="teachers_info">
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title">
+                                        <span>শিক্ষাগত যোগ্যতা</span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text"> B.COM. & B.P.ED</span>
+                                </div>
+
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1 ">
+                                        <span>ঠিকানা </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">শায়েস্তাগঞ্জ, হবিগঞ্জ</span>
+                                </div>
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1">
+                                        <span>মোবাইল নম্বর </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">+880 1720-415274</span>
+                                </div>
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1">
+                                        <span>ই- মেইল      </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">  mosiur@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mt-4">
+                        <div class="teacher_cards">
+                            <div class="teachers_img">
+                                <img src="{{asset('front-end/assets/image/teachers_img_03.png')}}" alt="">
+                            </div>
+                            <div class="teachers_name mt-4">
+                                <h1>ড. মোঃ মসিউর রহমান</h1>
+                                <p>প্রধান শিক্ষক (ভারপ্রাপ্ত)</p>
+                            </div>
+                            <div class="teachers_info">
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title">
+                                        <span>শিক্ষাগত যোগ্যতা</span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">M.S.S. & B.ED</span>
+                                </div>
+                              
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1 ">
+                                        <span>ঠিকানা </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">পাবনা সদর, পাবনা</span>
+                                </div>
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1">
+                                        <span>মোবাইল নম্বর </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">+880 1720-415274</span>
+                                </div>
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1">
+                                        <span>ই- মেইল      </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">  mosiur@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mt-4">
+                        <div class="teacher_cards">
+                            <div class="teachers_img">
+                                <img src="{{asset('front-end/assets/image/teachers_img_02.png')}}" alt="">
+                            </div>
+                            <div class="teachers_name mt-4">
+                                <h1>মোঃ এনামুল হক (উপাধ্যক্ষ)</h1>
+                                <p>সহকারী প্রধান শিক্ষক</p>
+                            </div>
+                            <div class="teachers_info">
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title">
+                                        <span>শিক্ষাগত যোগ্যতা</span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text"> B.S.Sc & M.A.</span>
+                                </div>
+                     
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1 ">
+                                        <span>ঠিকানা </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">পাবনা সদর, পাবনা</span>
+                                </div>
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1">
+                                        <span>মোবাইল নম্বর </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">+880 1720-415274</span>
+                                </div>
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1">
+                                        <span>ই- মেইল      </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">  mosiur@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mt-4">
+                        <div class="teacher_cards">
+                            <div class="teachers_img">
+                                <img src="{{asset('front-end/assets/image/teachers_img_01.png')}}" alt="">
+                            </div>
+                            <div class="teachers_name mt-4">
+                                <h1>মোছাঃ রিফা আক্তার</h1>
+                                <p>সহকারী শিক্ষক</p>
+                            </div>
+                            <div class="teachers_info">
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title">
+                                        <span>শিক্ষাগত যোগ্যতা</span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text"> B.COM. & B.P.ED</span>
+                                </div>
+
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1 ">
+                                        <span>ঠিকানা </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">শায়েস্তাগঞ্জ, হবিগঞ্জ</span>
+                                </div>
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1">
+                                        <span>মোবাইল নম্বর </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">+880 1720-415274</span>
+                                </div>
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1">
+                                        <span>ই- মেইল      </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">  mosiur@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mt-4">
+                        <div class="teacher_cards">
+                            <div class="teachers_img">
+                                <img src="{{asset('front-end/assets/image/teachers_img_03.png')}}" alt="">
+                            </div>
+                            <div class="teachers_name mt-4">
+                                <h1>ড. মোঃ মসিউর রহমান</h1>
+                                <p>প্রধান শিক্ষক (ভারপ্রাপ্ত)</p>
+                            </div>
+                            <div class="teachers_info">
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title">
+                                        <span>শিক্ষাগত যোগ্যতা</span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">M.S.S. & B.ED</span>
+                                </div>
+                              
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1 ">
+                                        <span>ঠিকানা </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">পাবনা সদর, পাবনা</span>
+                                </div>
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1">
+                                        <span>মোবাইল নম্বর </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">+880 1720-415274</span>
+                                </div>
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1">
+                                        <span>ই- মেইল      </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">  mosiur@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mt-4">
+                        <div class="teacher_cards">
+                            <div class="teachers_img">
+                                <img src="{{asset('front-end/assets/image/teachers_img_02.png')}}" alt="">
+                            </div>
+                            <div class="teachers_name mt-4">
+                                <h1>মোঃ এনামুল হক (উপাধ্যক্ষ)</h1>
+                                <p>সহকারী প্রধান শিক্ষক</p>
+                            </div>
+                            <div class="teachers_info">
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title">
+                                        <span>শিক্ষাগত যোগ্যতা</span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text"> B.S.Sc & M.A.</span>
+                                </div>
+                     
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1 ">
+                                        <span>ঠিকানা </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">পাবনা সদর, পাবনা</span>
+                                </div>
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1">
+                                        <span>মোবাইল নম্বর </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">+880 1720-415274</span>
+                                </div>
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1">
+                                        <span>ই- মেইল      </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">  mosiur@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mt-4">
+                        <div class="teacher_cards">
+                            <div class="teachers_img">
+                                <img src="{{asset('front-end/assets/image/teachers_img_01.png')}}" alt="">
+                            </div>
+                            <div class="teachers_name mt-4">
+                                <h1>মোছাঃ রিফা আক্তার</h1>
+                                <p>সহকারী শিক্ষক</p>
+                            </div>
+                            <div class="teachers_info">
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title">
+                                        <span>শিক্ষাগত যোগ্যতা</span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text"> B.COM. & B.P.ED</span>
+                                </div>
+
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1 ">
+                                        <span>ঠিকানা </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">শায়েস্তাগঞ্জ, হবিগঞ্জ</span>
+                                </div>
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1">
+                                        <span>মোবাইল নম্বর </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">+880 1720-415274</span>
+                                </div>
+                                <div class="teachers_info_item">
+                                    <div class="teachers_info_title mt-1">
+                                        <span>ই- মেইল      </span>
+                                        <span>:</span>
+                                    </div>
+                                    <span class="teachers_info_text">  mosiur@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
     <!-- Teachers_Information End -->

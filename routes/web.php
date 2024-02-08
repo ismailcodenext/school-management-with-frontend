@@ -105,6 +105,7 @@ Route::get('/admission-form',[AdmissionFormController::class,'AdmissionFormPage'
 
 Route::view('/vice-Principal-message','pages.front-end-page.home.vice-principals-message-page');
 Route::view('/class-routing','pages.front-end-page.class-routing.class-routing-page');
+Route::view('/notice','pages.front-end-page.notice-page.class-notice-page');
 Route::view('/principal-message','pages.front-end-page.introduction.principals-message-page');
 Route::view('/teachers-information','pages.front-end-page.introduction.teachers-information-page');
 Route::view('/institute-gallary','pages.front-end-page.media.institute-gallary');
