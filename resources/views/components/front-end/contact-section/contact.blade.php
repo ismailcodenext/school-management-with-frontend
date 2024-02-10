@@ -102,22 +102,23 @@
                                         <textarea name="" id="UserMessage"></textarea>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
                             <div class="row ">
-                                <div class="col-md-6 mt-4">
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </form>
-
-                <div class="col-md-6 mt-5">
+                           
+                                
+                <div class="col-md-12 mt-4 ms-2">
                     <div class="contact_btn ">
-                        <button onclick="Save()" id="save-btn">SUBMIT</button>
+                        <button onclick="Save()" id="save-btn"> SUBMIT</button>
                     </div>
                 </div>
+
+                            </div>
+                            </div>
+                     
+                        </div>
+                    </div>
+               
+
 
                 <div class="row mt-4">
                     <div class="col-12">
