@@ -15,6 +15,7 @@ use App\Http\Controllers\PrincipalMessageController;
 use App\Http\Controllers\PhotoGalleryController;
 use App\Http\Controllers\BlogNewsController;
 use App\Http\Controllers\SectionController;
+use App\Http\Controllers\GroupController;
 use App\Http\Controllers\HeroSliderController;
 use Illuminate\Support\Facades\Route;
 
@@ -67,6 +68,17 @@ Route::post("/delete-section",[SectionController::class,'SectionDelete'])->middl
 
 
 
+
+// Section Web API Routes
+Route::post("/create-group",[GroupController::class,'GroupCreate'])->middleware('auth:sanctum');
+Route::get("/list-group",[GroupController::class,'GroupList'])->middleware('auth:sanctum');
+Route::post("/group-by-id",[GroupController::class,'GroupByID'])->middleware('auth:sanctum');
+Route::post("/update-group",[GroupController::class,'GroupUpdate'])->middleware('auth:sanctum');
+Route::post("/delete-group",[GroupController::class,'GroupDelete'])->middleware('auth:sanctum');
+
+
+
+
 // User Message Web API Routes
 Route::post("/user-message-create",[UserMessageController::class,'UserMessageCreate'])->middleware('auth:sanctum');
 Route::get("/list-user-message",[UserMessageController::class,'UserMessageList'])->middleware('auth:sanctum');
@@ -101,7 +113,8 @@ Route::view('/teacherPage','pages.dashboard.teacher-page');
 Route::view('/topbarPage','pages.dashboard.topbar-page');
 Route::view('/brandingPage','pages.dashboard.branding-page');
 Route::view('/footerPage','pages.dashboard.footer-page');
-Route::view('/sectionPage','pages.dashboard..section-page.section');
+Route::view('/sectionPage','pages.dashboard.section-page.section');
+Route::view('/groupPage','pages.dashboard.group-page.group');
 
 
 
