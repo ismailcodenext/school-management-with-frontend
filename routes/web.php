@@ -17,6 +17,7 @@ use App\Http\Controllers\BlogNewsController;
 use App\Http\Controllers\SectionController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\HeroSliderController;
+use App\Http\Controllers\ClassController;
 use Illuminate\Support\Facades\Route;
 
 // User Web API Routes
@@ -196,6 +197,13 @@ Route::post("/delete-hero-slider",[HeroSliderController::class,'HeroSliderDelete
 Route::post("/hero-slider-by-id",[HeroSliderController::class,'HeroSliderByID'])->middleware('auth:sanctum');
 Route::post("/update-hero-slider",[HeroSliderController::class,'HeroSliderUpdate'])->middleware('auth:sanctum');
 
+// Class API Routes
+Route::get("/list-class",[ClassController::class,'ClassList'])->middleware('auth:sanctum');
+Route::post("/create-class",[ClassController::class,'ClassCreate'])->middleware('auth:sanctum');
+Route::post("/delete-class",[ClassController::class,'ClassDelete'])->middleware('auth:sanctum');
+Route::post("/class-by-id",[ClassController::class,'ClassByID'])->middleware('auth:sanctum');
+Route::post("/update-class",[ClassController::class,'ClassUpdate'])->middleware('auth:sanctum');
+
 
 // Page Routes
 Route::view('/institutionHistoryPage','pages.dashboard.institute-history-page');
@@ -203,3 +211,4 @@ Route::view('/principalMessagePage','pages.dashboard.principal-message-page');
 Route::view('/photoGalleryPage','pages.dashboard.photo-gallery-page');
 Route::view('/bolgNewsPage','pages.dashboard.blog-news-page');
 Route::view('/heroSliderPage','pages.dashboard.hero-slider-page');
+Route::view('/classPage','pages.dashboard.class-page');

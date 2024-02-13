@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> @yield('title') | Pabna International School</title>
+    <title> @yield('title') | Pabna International High School</title>
 
     <!-- Link Swiper's CSS Start -->
     <link
@@ -42,12 +42,12 @@
         <!-- Admission CSS Start -->
         <link rel="stylesheet" href="{{asset('front-end/assets/css/admission-form.css')}}" />
         <!-- Admission CSS End -->
-    
+
         <!-- Institute CSS Start -->
         <link rel="stylesheet" href="{{asset('front-end/assets/css/institute-gallery.css')}}" />
         <link rel="stylesheet" href="{{asset('front-end/assets/css/lightbox.css')}}" />
         <!-- Institute CSS End -->
-        
+
         <!-- Routing CSS Start -->
         <link rel="stylesheet" href="{{asset('front-end/assets/css/class-routine.css')}}" />
         <!-- Routing CSS End -->
@@ -72,7 +72,7 @@
           @yield('content')
       </div>
       <script src="{{asset('js/bootstrap.bundle.js')}}"></script>
-      
+
     <!-- Scripts -->
     <script src="{{asset('front-end/js/navbar.js')}}"></script>
 

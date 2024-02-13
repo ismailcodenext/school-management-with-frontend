@@ -120,9 +120,15 @@
         <span class="side-bar-item-caption">Hero Slider</span>
     </a>
 
+
     <a href="{{url("/sectionPage")}}" class="side-bar-item">
         <i class="bi bi-file-earmark-bar-graph"></i>
         <span class="side-bar-item-caption">Section</span>
+
+    <a href="{{url("/classPage")}}" class="side-bar-item">
+        <i class="bi bi-people"></i>
+        <span class="side-bar-item-caption">Class</span>
+
     </a>
 
     <a href="{{url("/groupPage")}}" class="side-bar-item">
