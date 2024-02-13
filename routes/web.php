@@ -14,6 +14,7 @@ use App\Http\Controllers\UserMessageController;
 use App\Http\Controllers\PrincipalMessageController;
 use App\Http\Controllers\PhotoGalleryController;
 use App\Http\Controllers\BlogNewsController;
+use App\Http\Controllers\SectionController;
 use App\Http\Controllers\HeroSliderController;
 use Illuminate\Support\Facades\Route;
 
@@ -56,6 +57,16 @@ Route::post("/delete-branding",[BrandingController::class,'BrandingDelete'])->mi
 
 
 
+// Section Web API Routes
+Route::post("/create-section",[SectionController::class,'SectionCreate'])->middleware('auth:sanctum');
+Route::get("/list-section",[SectionController::class,'SectionList'])->middleware('auth:sanctum');
+Route::post("/section-by-id",[SectionController::class,'SectionByID'])->middleware('auth:sanctum');
+Route::post("/update-section",[SectionController::class,'SectionUpdate'])->middleware('auth:sanctum');
+Route::post("/delete-section",[SectionController::class,'SectionDelete'])->middleware('auth:sanctum');
+
+
+
+
 // User Message Web API Routes
 Route::post("/user-message-create",[UserMessageController::class,'UserMessageCreate'])->middleware('auth:sanctum');
 Route::get("/list-user-message",[UserMessageController::class,'UserMessageList'])->middleware('auth:sanctum');
@@ -77,7 +88,7 @@ Route::post("/delete-footer",[FooterController::class,'FooterDelete'])->middlewa
 
 
 
-// Page Routes
+//Back-End Page Routes
 Route::view('/','pages.front-end-page.home.home-page');
 Route::view('/userLogin','pages.auth.login-page')->name('login');
 Route::view('/userRegistration','pages.auth.registration-page');
@@ -90,6 +101,8 @@ Route::view('/teacherPage','pages.dashboard.teacher-page');
 Route::view('/topbarPage','pages.dashboard.topbar-page');
 Route::view('/brandingPage','pages.dashboard.branding-page');
 Route::view('/footerPage','pages.dashboard.footer-page');
+Route::view('/sectionPage','pages.dashboard..section-page.section');
+
 
 
 
