@@ -31,44 +31,15 @@ class ClassController extends Controller
 
 
            ]);
-           return response()->json(['status' => 'success', 'message' => "Request Successful"]);
+           return response()->json(['status' => 'success', 'message' => "Class Name Create Successful"]);
        }catch (Exception $e){
            return response()->json(['status' => 'fail', 'message' => $e->getMessage()]);
        }
+       
    }
 
-   function ClassDelete(Request $request){
-       try {
-           $user_id = Auth::id();
-           $request->validate([
-               'id' => 'required|string',
-           ]);
-
-           $class = Classroom::where('id', $request->input('id'))->where('user_id', $user_id)->first();
-
-           if (!$class) {
-               return response()->json(['status' => 'fail', 'message' => 'Class not found or unauthorized access.']);
-           }
-
-           $class->delete();
-
-           return response()->json(['status' => 'success', 'message' => 'Class deleted successfully']);
-       } catch (Exception $e) {
-           return response()->json(['status' => 'fail', 'message' => $e->getMessage()]);
-       }
-   }
 
    function ClassByID(Request $request){
-//       try {
-//           $user_id=Auth::id();
-//           $request->validate(["id"=> 'required|string']);
-//           $rows= Classroom::where('id',$request->input('id'))->where('user_id',$user_id)->first();
-//           return response()->json(['status' => 'success', 'rows' => $rows]);
-//       }catch (Exception $e){
-//           return response()->json(['status' => 'fail', 'message' => $e->getMessage()]);
-//       }
-
-
        try {
            $request->validate([
                'id' => 'required|min:1'
@@ -84,27 +55,46 @@ class ClassController extends Controller
 
    function ClassUpdate(Request $request){
        try {
-           $user_id = Auth::id();
-           $class_data = Classroom::find($request->input('id'));
+        $request->validate([
+            'id' => 'required|min:1',
+            'class_name' => 'required|string|max:100'
+        ]);
 
-           if (!$class_data || $class_data->user_id != $user_id) {
-               return response()->json(['status' => 'fail', 'message' => 'Class not found or unauthorized access.']);
-           }
+        $group_id = $request->input('id');
+        $user_id=Auth::id();
+        Classroom::where('id',$group_id)->where('user_id',$user_id)->update([
+            'class_name' => $request->input('class_name')
+        ]);
 
-           // Update fields
-           $class_data->class_name = $request->input('clsNameUpdate');
+        return response()->json(['status' => 'success', 'message' => 'Class Name updated successfully']);
 
-           // Save the changes
-           $class_data->save();
-
-           return response()->json(['status' => 'success', 'message' => 'Hero Slider updated successfully']);
-       } catch (Exception $e) {
-           return response()->json(['status' => 'fail', 'message' => $e->getMessage()]);
-       }
-
+    } catch (Exception $e) {
+        return response()->json(['status' => 'fail', 'message' => $e->getMessage()]);
+    }
 
 
    }
+
+   function ClassDelete(Request $request){
+    try {
+        $user_id = Auth::id();
+        $request->validate([
+            'id' => 'required|string',
+        ]);
+
+        $class = Classroom::where('id', $request->input('id'))->where('user_id', $user_id)->first();
+
+        if (!$class) {
+            return response()->json(['status' => 'fail', 'message' => 'Class not found or unauthorized access.']);
+        }
+
+        $class->delete();
+
+        return response()->json(['status' => 'success', 'message' => 'Class deleted successfully']);
+    } catch (Exception $e) {
+        return response()->json(['status' => 'fail', 'message' => $e->getMessage()]);
+    }
+}
 
 
 }
