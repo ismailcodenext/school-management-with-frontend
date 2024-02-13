@@ -162,25 +162,14 @@
                     errorToast("Message Required !");
                 }
                  else {
-                    // document.getElementById('modal-close').click();
                     let formData = new FormData();
                     formData.append('name', UserName);
                     formData.append('email', UserEmail);
                     formData.append('mobile', UserMobile);
                     formData.append('subject', UserSubject);
                     formData.append('message', UserMessage);
-
-                    // const config = {
-                    //     headers: {
-                    //         'content-type': 'multipart/form-data',
-                    //         ...HeaderToken().headers
-                    //     }
-                    // }
-
-                    showLoader();
+                    
                     let res = await axios.post("/user-message-create", formData);
-                    hideLoader();
-
                     if (res.data['status'] === "success") {
                         successToast(res.data['message']);
                         document.getElementById("save-form").reset();
@@ -190,8 +179,6 @@
                     }
                 }
 
-            } catch (e) {
-                unauthorized(e.response.status)
-            }
+            } 
         }
     </script>

@@ -99,6 +99,7 @@ Route::view('/footerPage','pages.dashboard.footer-page');
 
 Route::get('/home',[HomeController::class,'HomePage']);
 Route::get('/topbar-list',[TopbarController::class,'index']);
+Route::get('/branding-list',[BrandingController::class,'index']);
 
 
 Route::get('/admission-form',[AdmissionFormController::class,'AdmissionFormPage']);

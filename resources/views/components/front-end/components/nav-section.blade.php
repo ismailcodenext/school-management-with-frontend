@@ -78,7 +78,7 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#"
-                  >ভর্তি<img src="./assets/icon/Vector.svg" alt=""
+                  >ভর্তি<img src="{{asset('front-end/assets/icon/Vector.svg')}}" alt=""
                 /></a>
                 <span class="dropBottom"></span>
                 <ul>

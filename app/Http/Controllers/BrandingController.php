@@ -3,14 +3,20 @@
 namespace App\Http\Controllers;
 use App\Models\Branding;
 use Exception;
+use App\Helper\ResponseHelper;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 
 class BrandingController extends Controller
 {
-    public function BrandingCreate(Request $request)
+
+    public function index(){
+        $BrandingData=Branding::first();
+        return ResponseHelper::Out('success',$BrandingData,200);
+    }
+
+    public function BrandingCreate(Request $request):JsonResponse
     {
         try {
             $user_id = Auth::id();

@@ -56,13 +56,14 @@
         <link rel="stylesheet" href="{{asset('front-end/assets/css/contact.css')}}" />
         <!-- Contact CSS End -->
 
+        <link href="{{asset('css/toastify.min.css')}}" rel="stylesheet" />
+        <script src="{{asset('js/toastify-js.js')}}"></script>
+        <script src="{{asset('js/axios.min.js')}}"></script>
+        <script src="{{asset('js/config.js')}}"></script>
+
     <!-- Bootstrap CSS Link Start -->
     <link rel="stylesheet" href="{{asset('front-end/assets/css/bootstrap/bootstrap.min.css')}}" />
     <!-- Bootstrap CSS Link End -->
-    <link href="{{asset('css/toastify.min.css')}}" rel="stylesheet" />
-    <script src="{{asset('js/toastify-js.js')}}"></script>
-    <script src="{{asset('js/axios.min.js')}}"></script>
-    <script src="{{asset('js/config.js')}}"></script>
   </head>
 
   <body>
