@@ -81,7 +81,8 @@ Route::post("/delete-group",[GroupController::class,'GroupDelete'])->middleware(
 
 
 // User Message Web API Routes
-Route::post("/user-message-create",[UserMessageController::class,'UserMessageCreate'])->middleware('auth:sanctum');
+// Mail Send Route
+Route::post('/contact',[UserMessageController::class,'send'])->name('contact');
 Route::get("/list-user-message",[UserMessageController::class,'UserMessageList'])->middleware('auth:sanctum');
 Route::post("/user-message-by-id",[UserMessageController::class,'UserMessageByID'])->middleware('auth:sanctum');
 Route::post("/delete-user-message",[UserMessageController::class,'UserMessageDelete'])->middleware('auth:sanctum');
@@ -116,6 +117,7 @@ Route::view('/brandingPage','pages.dashboard.branding-page');
 Route::view('/footerPage','pages.dashboard.footer-page');
 Route::view('/sectionPage','pages.dashboard.section-page.section');
 Route::view('/groupPage','pages.dashboard.group-page.group');
+Route::view('/userMessage','pages.dashboard.usermessage-page.usermessage');
 
 
 
@@ -138,13 +140,6 @@ Route::view('/principal-message','pages.front-end-page.introduction.principals-m
 Route::view('/teachers-information','pages.front-end-page.introduction.teachers-information-page');
 Route::view('/institute-gallary','pages.front-end-page.media.institute-gallary');
 Route::view('/contact-us','pages.front-end-page.contact.contact-page');
-
-
-
-
-
-
-
 
 
 

@@ -19,9 +19,9 @@
                 <div class="contact_heading mt-2">
                     <h1>যোগাযোগ করুন</h1>
                 </div>
-                <form id="save-form" class="contact_form">
+                <form action="{{route('contact')}}" method="POST" id="contact_form">
+                    @csrf
                     <div class="row">
-
                         <div class="col-md-5">
                             <div class="row">
                                 <div class="col-md-12">
@@ -70,13 +70,13 @@
                                 <div class="col-md-6 mt-4">
                                     <div class="contact_name ">
                                         <label for="">Name*</label> <br>
-                                        <input type="text" id="UserName" placeholder="Enter here...">
+                                        <input type="text" required name="name" placeholder="Enter here...">
                                     </div>
                                 </div>
                                 <div class="col-md-6 mt-4">
                                     <div class="contact_email">
                                         <label for="">Email*</label> <br>
-                                        <input type="email" id="UserEmail" placeholder="Enter here...">
+                                        <input type="email" name="email" placeholder="Enter here...">
                                     </div>
                                 </div>
                             </div>
@@ -84,13 +84,13 @@
                                 <div class="col-md-6 mt-4">
                                     <div class="contact_number ">
                                         <label for="">Phone Number*</label> <br>
-                                        <input type="number" id="UserMobile" placeholder="Enter here...">
+                                        <input type="number" name="mobile" placeholder="Enter here...">
                                     </div>
                                 </div>
                                 <div class="col-md-6 mt-4">
                                     <div class="contact_subject">
                                         <label for="">Subject*</label> <br>
-                                        <input type="text" id="UserSubject" placeholder="Enter here...">
+                                        <input type="text" name="subject" placeholder="Enter here...">
                                     </div>
                                 </div>
                             </div>
@@ -99,25 +99,23 @@
                                 <div class="col-md-12 mt-4">
                                     <div class="contact_message ">
                                         <label for="">Message*</label> <br>
-                                        <textarea name="" id="UserMessage"></textarea>
+                                        <textarea name="message" id=""></textarea>
                                     </div>
                                 </div>
-                            </form>
+                            </div>
                             <div class="row ">
-                           
-                                
-                <div class="col-md-12 mt-4 ms-2">
-                    <div class="contact_btn ">
-                        <button onclick="Save()" id="save-btn"> SUBMIT</button>
-                    </div>
-                </div>
-
+                                <div class="col-md-6 mt-4">
+                                    
+                                </div>
+                                <div class="col-md-6 mt-5">
+                                    <div class="contact_btn ">
+                                        <button type="submit">SUBMIT</button>
+                                    </div>
+                                </div>
                             </div>
-                            </div>
-                     
                         </div>
                     </div>
-               
+                </form>
 
 
                 <div class="row mt-4">
@@ -135,50 +133,3 @@
         </div>
     </section>
     <!-- Contact End -->
-
-    <script>
-        async function Save() {
-            try {
-                let UserName = document.getElementById('UserName').value;
-                let UserEmail = document.getElementById('UserEmail').value;
-                let UserMobile = document.getElementById('UserMobile').value;
-                let UserSubject = document.getElementById('UserSubject').value;
-                let UserMessage = document.getElementById('UserMessage').value;
-
-
-                if (UserName.length === 0) {
-                    errorToast("Name Is Required !");
-                }
-                 else if (UserEmail.length === 0) {
-                    errorToast("Email Is Required !");
-                }
-                 else if (UserMobile.length === 0) {
-                    errorToast("Number Is Required !");
-                }
-                else if (UserSubject.length === 0) {
-                    errorToast("Subject Is Required !");
-                }
-                else if (UserMessage.length === 0) {
-                    errorToast("Message Required !");
-                }
-                 else {
-                    let formData = new FormData();
-                    formData.append('name', UserName);
-                    formData.append('email', UserEmail);
-                    formData.append('mobile', UserMobile);
-                    formData.append('subject', UserSubject);
-                    formData.append('message', UserMessage);
-                    
-                    let res = await axios.post("/user-message-create", formData);
-                    if (res.data['status'] === "success") {
-                        successToast(res.data['message']);
-                        document.getElementById("save-form").reset();
-                        await getList();
-                    } else {
-                        errorToast(res.data['message'])
-                    }
-                }
-
-            } 
-        }
-    </script>

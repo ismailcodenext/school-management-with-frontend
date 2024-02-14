@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('mobile')->nullable();
             $table->string('subject')->nullable();
             $table->string('message',2000)->nullable();
-            $table->timestamp('created_at')->useCurrent();
+            $table->timestamps();
         });
     }
 
