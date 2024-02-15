@@ -13,4 +13,7 @@ class Group extends Model
         'group_name',
         'user_id',
     ];
+    public static function id()
+    {
+    }
 }

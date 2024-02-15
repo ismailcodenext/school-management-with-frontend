@@ -25,4 +25,8 @@ class GradientInfo extends Model
         'student_infos_id',
         'user_id'
     ];
+
+    public static function id()
+    {
+    }
 }
