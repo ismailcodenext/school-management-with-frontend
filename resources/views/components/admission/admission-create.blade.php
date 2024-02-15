@@ -1,41 +1,55 @@
 <div class="modal animated zoomIn" id="create-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-md">
+    <div class="modal-dialog modal-dialog-box modal-dialog-centered modal-md">
         <div class="modal-content">
             <div class="modal-header">
-                <h6 class="modal-title" id="exampleModalLabel">Create New Student Admission</h6>
+                <h6 class="modal-title" style="font-size: 25px;" id="exampleModalLabel">Create New Student Admission</h6>
             </div>
             <div class="modal-body">
                 <form id="save-form">
                     <div class="container">
                         <div class="row">
-                            <h6 class="modal-title" id="exampleModalLabel">Student Information:</h6>
-                            <div class="col-12 p-1">
+                            <div class="col-6 p-1">
+                                <h6 class="modal-title" id="exampleModalLabel">Student Information:</h6>
                                 <label class="form-label">First Name *</label>
-                                <input type="text" class="form-control" id="heroSliderTitle">
+                                <input type="text" class="form-control" id="FirstName">
                                 <label class="form-label">Last Name *</label>
-                                <input type="text" class="form-control" id="heroSliderSubTitle">
+                                <input type="text" class="form-control" id="LastName">
                                 <label for="startDate">Date of Birth</label>
-                                <input id="startDate" class="form-control" type="date" />
+                                <input type="date" class="form-control" id="dateOfBirt" />
                                 <label class="form-label">Mobile *</label>
-                                <input type="text" class="form-control" id="heroSliderSubTitle">
+                                <input type="text" class="form-control" id="Mobile">
                                 <label class="form-label">Email *</label>
-                                <input type="text" class="form-control" id="heroSliderSubTitle">
-                                <label class="form-label">Select Gender *</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <input type="text" class="form-control" id="Email">
+                                <label class="form-label">Mother Tongue *</label>
+                                <input type="text" class="form-control" id="MotherTongu">
+                                <label class="form-label">Birth Certificate No *</label>
+                                <input type="text" class="form-control" id="BCNumber">
+                                <label class="form-label">NID No *</label>
+                                <input type="text" class="form-control" id="NIDNumber">
+                                <label class="form-label">Present Address *</label>
+                                <input type="text" class="form-control" id="PresentAddress">
+                                <label class="form-label">Permanent Address *</label>
+                                <input type="text" class="form-control" id="PermanentAddress">
+                                <label class="form-label">City *</label>
+                                <input type="text" class="form-control" id="City">
+                                <label class="form-label">State *</label>
+                                <input type="text" class="form-control" id="State">
+                                <label class="form-label"> Gender *</label>
+                                <select class="form-select" id="Gender" aria-label="Default select example">
                                     <option selected>Select Gender</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
                                     <option value="Others">Others</option>
                                 </select>
                                 <label class="form-label">Religion *</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select" id="Religion" aria-label="Default select example">
                                     <option selected>Select Religion</option>
-                                    <option value="Ismail">Ismail</option>
+                                    <option value="Islam">Islam</option>
                                     <option value="Hindu">Hindu</option>
                                     <option value="Others">Others</option>
                                 </select>
                                 <label class="form-label">Blood Group *</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select" id="Blood" aria-label="Default select example">
                                     <option selected>Select Blood Group</option>
                                     <option value="A+">A+</option>
                                     <option value="AB+">AB+</option>
@@ -46,8 +60,59 @@
                                 <br/>
                                 <img class="w-15" id="newImg" src="{{asset('images/default.jpg')}}"/>
                                 <br/>
-                                <label class="form-label">Principal Photo</label>
+                                <label class="form-label">Student Photo</label>
                                 <input oninput="newImg.src=window.URL.createObjectURL(this.files[0])" type="file" class="form-control" id="img_url">
+                            </div>
+
+                            <div class="col-6 p-1">
+                            <h6 class="modal-title" id="exampleModalLabel">Gradient Information:</h6>
+                                <label class="form-label">Gradient Name *</label>
+                                <input type="text" class="form-control" id="GradientName">
+                                <label for="startDate">Relation</label>
+                                <input id="startDate" class="form-control" type="Relation" />
+                                <label class="form-label">Father Name *</label>
+                                <input type="text" class="form-control" id="FatherName">
+                                <label class="form-label">Mother Name *</label>
+                                <input type="text" class="form-control" id="MotherName">
+                                <label class="form-label">Occupation *</label>
+                                <input type="text" class="form-control" id="Occupation">
+                                <label class="form-label">Income *</label>
+                                <input type="text" class="form-control" id="GradientIncome">
+                                <label class="form-label">Education Optional*</label>
+                                <input type="text" class="form-control" id="EducationOptional">
+                                <label class="form-label">Email Optional*</label>
+                                <input type="text" class="form-control" id="EmailOptional">
+                                <label class="form-label">Mobile *</label>
+                                <input type="text" class="form-control" id="GradientMobile">
+                                <label class="form-label">Address *</label>
+                                <input type="text" class="form-control" id="GradientAddress">
+                                <label class="form-label">City*</label>
+                                <input type="text" class="form-control" id="GradientCity">
+                                <label class="form-label">State*</label>
+                                <input type="text" class="form-control" id="GradientState">
+                                <br/>
+                                <img class="w-15" id="newImg" src="{{asset('images/default.jpg')}}"/>
+                                <br/>
+                                <label class="form-label">Gradient Photo</label>
+                                <input oninput="newImg.src=window.URL.createObjectURL(this.files[0])" type="file" class="form-control" id="img_url">
+                            </div>
+                            <div class="col-6 p-1 mt-3">
+                                <h6 class="modal-title" id="exampleModalLabel">Academic Information:</h6>
+                                <label class="form-label">Institute Name *</label>
+                                <input type="text" class="form-control" id="InstituteName">
+                                <label class="form-label">Admission Date *</label>
+                                <input type="date" class="form-control" id="AdmissionDate">
+                                <label class="form-label">Roll No *</label>
+                                <input type="text" class="form-control" id="RollNumber">
+                            </div>
+                            <div class="col-6 p-1 mt-3">
+                            <h6 class="modal-title" id="exampleModalLabel">Previous Institute Information:</h6>
+                                <label class="form-label">Institute Name *</label>
+                                <input type="text" class="form-control" id="InstituteName">
+                                <label for="startDate">Class Name</label>
+                                <input id="startDate" class="form-control" type="ClassName" />
+                                <label class="form-label">Years *</label>
+                                <input type="text" class="form-control" id="Years">
                             </div>
                         </div>
                     </div>

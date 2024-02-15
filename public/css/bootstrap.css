@@ -6824,6 +6824,10 @@ fieldset:disabled .btn {
 }
 
 @media (min-width: 576px) {
+
+    .modal-dialog-box{
+        max-width: 1300px !important;
+    }
     .modal-dialog {
         max-width: 500px;
         margin: 1.75rem auto;
