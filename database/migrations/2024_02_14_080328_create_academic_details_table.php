@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('academic_details', function (Blueprint $table) {
             $table->id();
             $table->string('institute_name');
-            $table->dath('admisstion_date');
+            $table->date('admisstion_date');
             $table->string('roll_no')->unique();
             $table->unsignedBigInteger('classroom_id');
             $table->unsignedBigInteger('section_id');

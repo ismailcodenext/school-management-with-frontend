@@ -18,6 +18,7 @@ use App\Http\Controllers\SectionController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\HeroSliderController;
 use App\Http\Controllers\ClassController;
+use App\Http\Controllers\AdmissionController;
 use Illuminate\Support\Facades\Route;
 
 // User Web API Routes
@@ -199,6 +200,10 @@ Route::post("/delete-class",[ClassController::class,'ClassDelete'])->middleware(
 Route::post("/class-by-id",[ClassController::class,'ClassByID'])->middleware('auth:sanctum');
 Route::post("/update-class",[ClassController::class,'ClassUpdate'])->middleware('auth:sanctum');
 
+// Admission API Routes
+Route::get("/list-admission",[AdmissionController::class,'AdmissionList'])->middleware('auth:sanctum');
+Route::get("/create-admission",[AdmissionController::class,'AdmissionCreate'])->middleware('auth:sanctum');
+
 
 // Page Routes
 Route::view('/institutionHistoryPage','pages.dashboard.institute-history-page');
@@ -207,3 +212,4 @@ Route::view('/photoGalleryPage','pages.dashboard.photo-gallery-page');
 Route::view('/bolgNewsPage','pages.dashboard.blog-news-page');
 Route::view('/heroSliderPage','pages.dashboard.hero-slider-page');
 Route::view('/classPage','pages.dashboard.class-page');
+Route::view('/admissionPage','pages.dashboard.admission.admission-page');

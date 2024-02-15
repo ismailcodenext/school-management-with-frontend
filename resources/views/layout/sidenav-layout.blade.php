@@ -141,6 +141,11 @@
         <span class="side-bar-item-caption">User Message</span>
     </a>
 
+    <a href="{{url("/admissionPage")}}" class="side-bar-item">
+        <i class="bi bi-file-earmark-bar-graph"></i>
+        <span class="side-bar-item-caption">Student Admission Details</span>
+    </a>
+
 {{--    <a href="{{url("/categoryPage")}}" class="side-bar-item">--}}
 {{--        <i class="bi bi-list-nested"></i>--}}
 {{--        <span class="side-bar-item-caption">Category</span>--}}
