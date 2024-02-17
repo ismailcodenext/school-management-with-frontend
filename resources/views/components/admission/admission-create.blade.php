@@ -15,7 +15,7 @@
                                 <label class="form-label">Last Name *</label>
                                 <input type="text" class="form-control" id="StudentLastName">
                                 <label for="startDate">Date of Birth</label>
-                                <input type="date" class="form-control" id="StudentdateOfBirt" />
+                                <input type="date" class="form-control" id="StudentDOB" />
                                 <label class="form-label">Mobile *</label>
                                 <input type="text" class="form-control" id="StudentMobile">
                                 <label class="form-label">Email *</label>
@@ -58,10 +58,10 @@
                                     <option value="O-">O-</option>
                                 </select>
                                 <br/>
-                                <img class="w-15" id="newImg" src="{{asset('images/default.jpg')}}"/>
+                                <img class="w-15" id="studentnewImg" src="{{asset('images/default.jpg')}}"/>
                                 <br/>
                                 <label class="form-label">Student Photo</label>
-                                <input oninput="newImg.src=window.URL.createObjectURL(this.files[0])" type="file" class="form-control" id="student_img_url">
+                                <input oninput="studentnewImg.src=window.URL.createObjectURL(this.files[0])" type="file" class="form-control" id="student_img_url">
                             </div>
                             {{-- Gradient Information--}}
                             <div class="col-6 p-1">
@@ -69,7 +69,7 @@
                                 <label class="form-label">Gradient Name *</label>
                                 <input type="text" class="form-control" id="GradientName">
                                 <label for="startDate">Relation</label>
-                                <input id="startDate" class="form-control" type="GradientRelation" />
+                                <input id="GradientRelation" class="form-control" type="text" />
                                 <label class="form-label">Father Name *</label>
                                 <input type="text" class="form-control" id="GradientFatherName">
                                 <label class="form-label">Mother Name *</label>
@@ -91,10 +91,10 @@
                                 <label class="form-label">State*</label>
                                 <input type="text" class="form-control" id="GradientState">
                                 <br/>
-                                <img class="w-15" id="newImg" src="{{asset('images/default.jpg')}}"/>
+                                <img class="w-15" id="gradiatnewImg" src="{{asset('images/default.jpg')}}"/>
                                 <br/>
                                 <label class="form-label">Gradient Photo</label>
-                                <input oninput="newImg.src=window.URL.createObjectURL(this.files[0])" type="file" class="form-control" id="gradient_img_url">
+                                <input oninput="gradiatnewImg.src=window.URL.createObjectURL(this.files[0])" type="file" class="form-control" id="gradient_img_url">
                             </div>
 
                             {{---Academic Information Data--}}
@@ -180,7 +180,7 @@
             // Get values from the form - Student Information
             let StudentFirstName = document.getElementById('StudentFirstName').value;
             let StudentLastName = document.getElementById('StudentLastName').value;
-            let StudentdateOfBirt = document.getElementById('StudentdateOfBirt').value;
+            let StudentDOB = document.getElementById('StudentDOB').value;
             let StudentMobile = document.getElementById('StudentMobile').value;
             let StudentEmail = document.getElementById('StudentEmail').value;
             let StudentMotherTongu = document.getElementById('StudentMotherTongu').value;
@@ -197,7 +197,7 @@
 
 
 // Check if a file is selected for student photo
-            let imgFiles = imgInput.files[0];
+            let studentImgFiles = imgInput.files[0];
 
 
 
@@ -218,7 +218,7 @@
             let imgInputs = document.getElementById('gradient_img_url');
 
             // Check if a file is selected for gradient photo
-            let imgFile = imgInputs.files[0];
+            let gradientImgFile = imgInputs.files[0];
 
 
 
@@ -241,7 +241,7 @@
             // Append Student Information data
             formData.append('first_name', StudentFirstName);
             formData.append('last_name', StudentLastName);
-            formData.append('dob', StudentdateOfBirt);
+            formData.append('dob', StudentDOB);
             formData.append('gender',StudentGender);
             formData.append('blood_group',StudentBlood);
             formData.append('religion',StudentReligion);
@@ -254,7 +254,7 @@
             formData.append('permanent_address',StudentPermanentAddress);
             formData.append('city',StudentCity);
             formData.append('state',StudentState);
-            formData.append('img', imgFiles);
+            formData.append('img_student', studentImgFiles);
 
 
 
@@ -273,7 +273,7 @@
             formData.append('address', GradientAddress);
             formData.append('city', GradientCity);
             formData.append('state', GradientState);
-            formData.append('img', imgFile);
+            formData.append('img_gradient', gradientImgFile);
 
 
 

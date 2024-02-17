@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\GradiantInfos;
 use App\Models\StudentInfo;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\GradientInfo;
-use App\Models\Group;
 use App\Models\AcademicDetails;
-use App\Models\PreviousInstituteDetails;
+use App\Models\PreviousInstitute;
 
 class AdmissionController extends Controller
 {
@@ -26,23 +25,16 @@ class AdmissionController extends Controller
 
     function AdmissionCreate(Request $request)
     {
+
         try {
             $user_id = Auth::id();
-            $student_infos_id = GradientInfo::id();
-            $group_id = Group::id();
-
-            // Student Information
-            $user_id = Auth::id();
-            $student_img = $request->file('img');
-
-            $t = time();
+            $student_img = $request->file('img_student');
+            $st = time();
             $file_name = $student_img->getClientOriginalName();
-            $student_img_name = "{$user_id}-{$t}-{$file_name}";
+            $student_img_name = "{$user_id}-{$st}-{$file_name}";
             $student_img_url = "uploads/Student_img/{$student_img_name}";
-
-
             // Upload File
-            $student_img->move(public_path('uploads/Student_img'), $student_img_name);
+            $student_img->move(public_path('uploads/Student_img/'), $student_img_name);
 
             StudentInfo::create([
                 'img_url' => $student_img_url,
@@ -65,17 +57,17 @@ class AdmissionController extends Controller
 
             ]);
 
-            $guardian_img = $request->file('img');
 
-            $t = time();
-            $file_name = $guardian_img->getClientOriginalName();
-            $guardian_img_name = "{$user_id}-{$t}-{$file_name}";
-            $student_img_url = "uploads/Gradient_img/{$guardian_img_name}";
+            $gradiant_img = $request->file('img_gradient');
+            $gt = time();
+            $file_name = $student_img->getClientOriginalName();
+            $gradiant_img_name = "{$user_id}-{$gt}-{$file_name}";
+            $gradiant_img_url = "uploads/Gradiant_img/{$gradiant_img_name}";
             // Upload File
-            $guardian_img->move(public_path('uploads/Gradient_img'), $guardian_img_name);
+            $gradiant_img->move(public_path('uploads/Gradiant_img/'), $gradiant_img_name);
 
-            GradientInfo::create([
-                'img_url' => $guardian_img_name,
+            GradiantInfos::create([
+                'img_url' => $gradiant_img_url,
                 'guardian_name' => $request->input('guardian_name'),
                 'relation' => $request->input('relation'),
                 'father_name' => $request->input('father_name'),
@@ -88,9 +80,7 @@ class AdmissionController extends Controller
                 'address' => $request->input('address'),
                 'city' => $request->input('city'),
                 'state' => $request->input('state'),
-                'student_infos_id' => $student_infos_id,
                 'user_id' => $user_id
-
             ]);
 
 
@@ -98,19 +88,14 @@ class AdmissionController extends Controller
                 'institute_name' => $request->input('institute_name'),
                 'admisstion_date' => $request->input('admisstion_date'),
                 'roll_no' => $request->input('roll_no'),
-                'classroom_id' => $request->input('classroom_id'),
-                'section_id' => $request->input('section_id'),
-                'group_id' => $group_id,
-                'student_infos_id' => $student_infos_id,
                 'user_id' => $user_id
 
             ]);
 
-            PreviousInstituteDetails::create([
+            PreviousInstitute::create([
                 'institute_names' => $request->input('institute_names'),
                 'class_name' => $request->input('class_name'),
                 'years' => $request->input('years'),
-                'student_infos_id' => $student_infos_id,
                 'user_id' => $user_id
 
             ]);

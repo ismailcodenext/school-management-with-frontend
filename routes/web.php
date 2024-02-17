@@ -202,7 +202,7 @@ Route::post("/update-class",[ClassController::class,'ClassUpdate'])->middleware(
 
 // Admission API Routes
 Route::get("/list-admission",[AdmissionController::class,'AdmissionList'])->middleware('auth:sanctum');
-Route::get("/create-admission",[AdmissionController::class,'AdmissionCreate'])->middleware('auth:sanctum');
+Route::post("/create-admission",[AdmissionController::class,'AdmissionCreate'])->middleware('auth:sanctum');
 
 
 // Page Routes

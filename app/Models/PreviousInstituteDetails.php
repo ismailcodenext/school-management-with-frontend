@@ -12,8 +12,6 @@ class PreviousInstituteDetails extends Model
         'institute_names',
         'class_name',
         'years',
-        'student_infos_id',
         'user_id'
-
     ];
 }
