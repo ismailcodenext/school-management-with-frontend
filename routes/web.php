@@ -203,7 +203,9 @@ Route::post("/update-class",[ClassController::class,'ClassUpdate'])->middleware(
 // Admission API Routes
 Route::get("/list-admission",[AdmissionController::class,'AdmissionList'])->middleware('auth:sanctum');
 Route::post("/create-admission",[AdmissionController::class,'AdmissionCreate'])->middleware('auth:sanctum');
-
+Route::post("/by-id-admission",[AdmissionController::class,'AdmissionByID'])->middleware('auth:sanctum');
+Route::post("/update-admission",[AdmissionController::class,'AdmissionUpdate'])->middleware('auth:sanctum');
+Route::post("/delete-admission",[AdmissionController::class,'AdmissionDelete'])->middleware('auth:sanctum');
 
 // Page Routes
 Route::view('/institutionHistoryPage','pages.dashboard.institute-history-page');

@@ -7,6 +7,7 @@ use App\Models\StudentInfo;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use App\Models\AcademicDetails;
 use App\Models\PreviousInstitute;
 
@@ -105,6 +106,69 @@ class AdmissionController extends Controller
             return response()->json(['status' => 'fail', 'message' => $e->getMessage()]);
         }
 
-
     }
+
+    function AdmissionByID(Request $request)
+    {
+        try {
+            $user_id = Auth::id();
+            $request->validate(["id" => 'required|string']);
+    
+            $studentInfo = StudentInfo::where('id', $request->input('id'))->where('user_id', $user_id)->first();
+            $gradiantInfo = GradiantInfos::where('id', $request->input('id'))->where('user_id', $user_id)->first();
+            $academicInfo = AcademicDetails::where('id', $request->input('id'))->where('user_id', $user_id)->first();
+            $previousInfo = PreviousInstitute::where('id', $request->input('id'))->where('user_id', $user_id)->first();
+    
+            return response()->json(['status' => 'success', 'studentInfo' => $studentInfo, 'gradiantInfo' => $gradiantInfo, 'academicInfo' => $academicInfo, 'previousInfo' => $previousInfo]);
+        } catch (Exception $e) {
+            return response()->json(['status' => 'fail', 'message' => $e->getMessage()]);
+        }
+    }
+
+    function AdmissionDelete(Request $request){
+        try {
+            $user_id = Auth::id();
+            $request->validate([
+                'id' => 'required|string',
+            ]);
+    
+            // Find records in each table based on the given ID
+            $student_info = StudentInfo::where('id', $request->input('id'))->where('user_id', $user_id)->first();
+            $gradiant_info = GradiantInfos::where('id', $request->input('id'))->where('user_id', $user_id)->first();
+            $academic_details = AcademicDetails::where('id', $request->input('id'))->where('user_id', $user_id)->first();
+            $previous_institute = PreviousInstitute::where('id', $request->input('id'))->where('user_id', $user_id)->first();
+    
+            if (!$student_info && !$gradiant_info && !$academic_details && !$previous_institute) {
+                return response()->json(['status' => 'fail', 'message' => 'Record not found or unauthorized access.']);
+            }
+            if ($student_info && $student_info->img_url && File::exists(public_path($student_info->img_url))) {
+                File::delete(public_path($student_info->img_url));
+            }
+            if ($gradiant_info && $gradiant_info->img_url && File::exists(public_path($gradiant_info->img_url))) {
+                File::delete(public_path($gradiant_info->img_url));
+            }
+
+            if ($student_info) {
+                $student_info->delete();
+            }
+            if ($gradiant_info) {
+                $gradiant_info->delete();
+            }
+            if ($academic_details) {
+                $academic_details->delete();
+            }
+            if ($previous_institute) {
+                $previous_institute->delete();
+            }
+    
+            return response()->json(['status' => 'success', 'message' => 'Records deleted successfully']);
+        } catch (Exception $e) {
+            return response()->json(['status' => 'fail', 'message' => $e->getMessage()]);
+        }
+    }
+    
+
+    
 }
+
+

@@ -28,4 +28,8 @@ class StudentInfo extends Model
         'user_id'
 
     ];
+
+    function gradiant(){
+        return $this->hasMany(GradiantInfos::class);
+    }
 }
