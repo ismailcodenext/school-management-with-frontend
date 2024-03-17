@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class StudentInfo extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'first_name',
         'last_name',
@@ -24,12 +25,11 @@ class StudentInfo extends Model
         'permanent_address',
         'city',
         'state',
+        'category',
+        'admission_date',
         'img_url',
-        'user_id'
-
+        'status',
+        'user_id',
     ];
 
-    function gradiant(){
-        return $this->hasMany(GradiantInfos::class);
-    }
 }

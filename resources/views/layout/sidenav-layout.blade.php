@@ -146,6 +146,11 @@
         <span class="side-bar-item-caption">Student Admission Details</span>
     </a>
 
+    <a href="{{url("/studentPage")}}" class="side-bar-item">
+        <i class="bi bi-file-earmark-bar-graph"></i>
+        <span class="side-bar-item-caption">Student Info</span>
+    </a>
+
 {{--    <a href="{{url("/categoryPage")}}" class="side-bar-item">--}}
 {{--        <i class="bi bi-list-nested"></i>--}}
 {{--        <span class="side-bar-item-caption">Category</span>--}}

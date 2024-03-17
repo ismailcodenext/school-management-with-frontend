@@ -32,6 +32,8 @@
                             <div  class="col-4 p-1">
                                 <label class="form-label">Birth Certificate No *</label>
                                 <input type="text" class="form-control" id="StudentBCNumber">
+                                <label class="form-label">Admission Date *</label>
+                                <input type="date" class="form-control" id="AdmissionDate">
                                 <label class="form-label">NID No *</label>
                                 <input type="text" class="form-control" id="StudentNIDNumber">
                                 <label class="form-label">Present Address *</label>
@@ -118,6 +120,7 @@
             let StudentGender = document.getElementById('StudentGender').value;
             let StudentReligion = document.getElementById('StudentReligion').value;
             let StudentBlood = document.getElementById('StudentBlood').value;
+            let AdmissionDate = document.getElementById('AdmissionDate').value;
             let StudentCategory = document.getElementById('StudentCategory').value;
             let StudentStatus = document.getElementById('StudentStatus').value;
             let imgInput = document.getElementById('student_img_url');
@@ -135,6 +138,7 @@
             formData.append('dob', StudentDOB);
             formData.append('gender',StudentGender);
             formData.append('blood_group',StudentBlood);
+            formData.append('admission_date',AdmissionDate);
             formData.append('religion',StudentReligion);
             formData.append('mobile', StudentMobile);
             formData.append('email',StudentEmail);
@@ -161,7 +165,7 @@
             };
 
             showLoader();
-            let res = await axios.post("/create-admission", formData, config);
+            let res = await axios.post("/create-student-info", formData, config);
             hideLoader();
 
             if (res.data['status'] === "success") {

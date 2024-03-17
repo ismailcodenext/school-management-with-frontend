@@ -18,6 +18,7 @@ use App\Http\Controllers\SectionController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\HeroSliderController;
 use App\Http\Controllers\ClassController;
+use App\Http\Controllers\BackEnd\StudentInfoController;
 use App\Http\Controllers\AdmissionController;
 use Illuminate\Support\Facades\Route;
 
@@ -103,7 +104,7 @@ Route::post("/delete-footer",[FooterController::class,'FooterDelete'])->middlewa
 
 
 
-//Back-End Page Routes
+//BackEnd Page Routes
 Route::view('/','pages.front-end-page.home.home-page');
 Route::view('/userLogin','pages.auth.login-page')->name('login');
 Route::view('/userRegistration','pages.auth.registration-page');
@@ -200,12 +201,12 @@ Route::post("/delete-class",[ClassController::class,'ClassDelete'])->middleware(
 Route::post("/class-by-id",[ClassController::class,'ClassByID'])->middleware('auth:sanctum');
 Route::post("/update-class",[ClassController::class,'ClassUpdate'])->middleware('auth:sanctum');
 
-// Admission API Routes
-Route::get("/list-admission",[AdmissionController::class,'AdmissionList'])->middleware('auth:sanctum');
-Route::post("/create-admission",[AdmissionController::class,'AdmissionCreate'])->middleware('auth:sanctum');
-Route::post("/by-id-admission",[AdmissionController::class,'AdmissionByID'])->middleware('auth:sanctum');
-Route::post("/update-admission",[AdmissionController::class,'AdmissionUpdate'])->middleware('auth:sanctum');
-Route::post("/delete-admission",[AdmissionController::class,'AdmissionDelete'])->middleware('auth:sanctum');
+// Student Info API Routes
+Route::get("/list-student-info",[StudentInfoController::class,'StudentInfoList'])->middleware('auth:sanctum');
+Route::post("/create-student-info",[StudentInfoController::class,'StudentInfoCreate'])->middleware('auth:sanctum');
+Route::post("/by-id-student-info",[StudentInfoController::class,'StudentInfoByID'])->middleware('auth:sanctum');
+Route::post("/update-student-info",[StudentInfoController::class,'StudentInfoUpdate'])->middleware('auth:sanctum');
+Route::post("/delete-student-info",[StudentInfoController::class,'StudentInfoDelete'])->middleware('auth:sanctum');
 
 // Page Routes
 Route::view('/institutionHistoryPage','pages.dashboard.institute-history-page');
@@ -214,4 +215,4 @@ Route::view('/photoGalleryPage','pages.dashboard.photo-gallery-page');
 Route::view('/bolgNewsPage','pages.dashboard.blog-news-page');
 Route::view('/heroSliderPage','pages.dashboard.hero-slider-page');
 Route::view('/classPage','pages.dashboard.class-page');
-Route::view('/admissionPage','pages.dashboard.admission.admission-page');
+Route::view('/studentPage','pages.dashboard.student-info-page.student-info');
