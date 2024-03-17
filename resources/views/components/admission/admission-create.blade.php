@@ -8,7 +8,7 @@
                 <form id="save-form">
                     <div class="container">
                         <div class="row">
-                            <div class="col-6 p-1">
+                            <div class="col-12 p-1">
                                 <h6 class="modal-title" id="exampleModalLabel">Student Information:</h6>
                                 <label class="form-label">First Name *</label>
                                 <input type="text" class="form-control" id="StudentFirstName">
@@ -62,72 +62,6 @@
                                 <br/>
                                 <label class="form-label">Student Photo</label>
                                 <input oninput="studentnewImg.src=window.URL.createObjectURL(this.files[0])" type="file" class="form-control" id="student_img_url">
-                            </div>
-                            {{-- Gradient Information--}}
-                            <div class="col-6 p-1">
-                            <h6 class="modal-title" id="exampleModalLabel">Gradient Information:</h6>
-                                <label class="form-label">Gradient Name *</label>
-                                <input type="text" class="form-control" id="GradientName">
-                                <label for="startDate">Relation</label>
-                                <input id="GradientRelation" class="form-control" type="text" />
-                                <label class="form-label">Father Name *</label>
-                                <input type="text" class="form-control" id="GradientFatherName">
-                                <label class="form-label">Mother Name *</label>
-                                <input type="text" class="form-control" id="GradientMotherName">
-                                <label class="form-label">Occupation *</label>
-                                <input type="text" class="form-control" id="GradientOccupation">
-                                <label class="form-label">Income *</label>
-                                <input type="text" class="form-control" id="GradientIncome">
-                                <label class="form-label">Education Optional*</label>
-                                <input type="text" class="form-control" id="GradientEducationOptional">
-                                <label class="form-label">Email Optional*</label>
-                                <input type="text" class="form-control" id="GradientEmailOptional">
-                                <label class="form-label">Mobile *</label>
-                                <input type="text" class="form-control" id="GradientMobile">
-                                <label class="form-label">Address *</label>
-                                <input type="text" class="form-control" id="GradientAddress">
-                                <label class="form-label">City*</label>
-                                <input type="text" class="form-control" id="GradientCity">
-                                <label class="form-label">State*</label>
-                                <input type="text" class="form-control" id="GradientState">
-                                <br/>
-                                <img class="w-15" id="gradiatnewImg" src="{{asset('images/default.jpg')}}"/>
-                                <br/>
-                                <label class="form-label">Gradient Photo</label>
-                                <input oninput="gradiatnewImg.src=window.URL.createObjectURL(this.files[0])" type="file" class="form-control" id="gradient_img_url">
-                            </div>
-
-                            {{---Academic Information Data--}}
-                            <div class="col-6 p-1 mt-3">
-                                <h6 class="modal-title" id="exampleModalLabel">Academic Information:</h6>
-                                <label class="form-label">Institute Name *</label>
-                                <input type="text" class="form-control" id="AcademicInstituteName">
-                                <label class="form-label">Admission Date *</label>
-                                <input type="date" class="form-control" id="AcademicAdmissionDate">
-                                <label class="form-label">Roll No *</label>
-                                <input type="text" class="form-control" id="AcademicRollNumber">
-                                <label class="form-label">Class Name *</label>
-                                <select class="form-select" id="AcademicClassName" aria-label="Default select example">
-                                    <option value="">Select Class</option>
-                                </select>
-
-                                <label class="form-label">Section Name *</label>
-                                <select class="form-select" id="AcademicSectionName" aria-label="Default select example">
-                                    <option value="">Section Name</option>
-                                </select>
-                                <label class="form-label">Group Name *</label>
-                                <select class="form-select" id="AcademicGroupName" aria-label="Default select example">
-                                    <option value="">Select Group</option>
-                                </select>
-                            </div>
-                            <div class="col-6 p-1 mt-3">
-                            <h6 class="modal-title" id="exampleModalLabel">Previous Institute Information:</h6>
-                                <label class="form-label">Previous Institute Name *</label>
-                                <input type="text" class="form-control" id="PrvInstituteName">
-                                <label for="ClassName">Previous Class Name</label>
-                                <input id="PrvClassName" class="form-control" />
-                                <label class="form-label">Years *</label>
-                                <input type="text" class="form-control" id="PrvInstituteYears">
                             </div>
                         </div>
                     </div>
@@ -200,42 +134,6 @@
             let studentImgFiles = imgInput.files[0];
 
 
-
-
-            // Get values from the form - Gradient Information
-            let GradientName = document.getElementById('GradientName').value;
-            let GradientRelation = document.getElementById('GradientRelation').value;
-            let GradientFatherName = document.getElementById('GradientFatherName').value;
-            let GradientMotherName = document.getElementById('GradientMotherName').value;
-            let GradientOccupation = document.getElementById('GradientOccupation').value;
-            let GradientIncome = document.getElementById('GradientIncome').value;
-            let GradientEducationOptional = document.getElementById('GradientEducationOptional').value;
-            let GradientEmailOptional = document.getElementById('GradientEmailOptional').value;
-            let GradientMobile = document.getElementById('GradientMobile').value;
-            let GradientAddress = document.getElementById('GradientAddress').value;
-            let GradientCity = document.getElementById('GradientCity').value;
-            let GradientState = document.getElementById('GradientState').value;
-            let imgInputs = document.getElementById('gradient_img_url');
-
-            // Check if a file is selected for gradient photo
-            let gradientImgFile = imgInputs.files[0];
-
-
-
-            // Get values from the form - Academic Information
-            let AcademicInstituteName = document.getElementById('AcademicInstituteName').value;
-            let AcademicAdmissionDate = document.getElementById('AcademicAdmissionDate').value;
-            let AcademicRollNumber = document.getElementById('AcademicRollNumber').value;
-            let AcademicClassName = document.getElementById('AcademicClassName').value;
-            let AcademicSectionName = document.getElementById('AcademicSectionName').value;
-            let AcademicGroupName = document.getElementById('AcademicGroupName').value;
-
-
-            // Get values from the form - Previous Information
-            let PrvInstituteName = document.getElementById('PrvInstituteName').value;
-            let PrvClassName = document.getElementById('PrvClassName').value;
-            let PrvInstituteYears = document.getElementById('PrvInstituteYears').value;
-
             // Prepare data for submission
             let formData = new FormData();
             // Append Student Information data
@@ -256,39 +154,6 @@
             formData.append('state',StudentState);
             formData.append('img_student', studentImgFiles);
 
-
-
-
-
-            // Append Gradient Information data
-            formData.append('guardian_name', GradientName);
-            formData.append('relation', GradientRelation);
-            formData.append('father_name', GradientFatherName);
-            formData.append('mother_name', GradientMotherName);
-            formData.append('occupation', GradientOccupation);
-            formData.append('income', GradientIncome);
-            formData.append('education', GradientEducationOptional);
-            formData.append('email', GradientEmailOptional);
-            formData.append('mobile', GradientMobile);
-            formData.append('address', GradientAddress);
-            formData.append('city', GradientCity);
-            formData.append('state', GradientState);
-            formData.append('img_gradient', gradientImgFile);
-
-
-
-            // Append Academic Information data
-            formData.append('institute_name', AcademicInstituteName);
-            formData.append('admisstion_date', AcademicAdmissionDate);
-            formData.append('roll_no', AcademicRollNumber);
-            formData.append('class_name', AcademicClassName);
-            formData.append('section_name', AcademicSectionName);
-            formData.append('group_name', AcademicGroupName);
-
-            // Append Previous Institute Information data
-            formData.append('institute_names', PrvInstituteName);
-            formData.append('class_name', PrvClassName);
-            formData.append('years', PrvInstituteYears);
 
 
 
