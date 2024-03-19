@@ -23,7 +23,7 @@ use App\Http\Controllers\PrincipalMessageController;
 use App\Http\Controllers\BackEnd\GradianInfoController;
 use App\Http\Controllers\BackEnd\StudentInfoController;
 use App\Http\Controllers\BackEnd\StudentRegistrationController;
-//use Illuminate\Support\Facades\Route;
+// use Illuminate\Support\Facades\Route;
 
 
 // User Web API Routes
@@ -165,6 +165,15 @@ Route::get("/list-gradian-info",[GradianInfoController::class,'GradianInfoList']
 Route::post("/gradian-info-by-id",[GradianInfoController::class,'GradianInfoByID'])->middleware('auth:sanctum');
 Route::post("/update-gradian-info",[GradianInfoController::class,'GradianInfoUpdate'])->middleware('auth:sanctum');
 Route::post("/delete-gradian-info",[GradianInfoController::class,'GradianInfoDelete'])->middleware('auth:sanctum');
+// Gradian Info APi Route end
+
+
+// Student Registration Info APi Route start
+Route::post("/create-student-registration",[StudentRegistrationController::class,'StudentRegistrationCreate'])->middleware('auth:sanctum');
+Route::get("/list-student-registration",[StudentRegistrationController::class,'StudentRegistrationList'])->middleware('auth:sanctum');
+Route::post("/student-registration-by-id",[StudentRegistrationController::class,'StudentRegistrationByID'])->middleware('auth:sanctum');
+Route::post("/update-student-registration",[StudentRegistrationController::class,'StudentRegistrationUpdate'])->middleware('auth:sanctum');
+Route::post("/delete-student-registration",[StudentRegistrationController::class,'StudentRegistrationDelete'])->middleware('auth:sanctum');
 // Gradian Info APi Route end
 
 

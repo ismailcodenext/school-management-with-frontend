@@ -13,7 +13,16 @@ return new class extends Migration
     {
         Schema::create('student_registrations', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->unsignedBigInteger('student_id');
+            $table->string('class_name')->nullable();
+            $table->string('section_name')->nullable();
+            $table->string('student_roll')->nullable();
+            $table->string('sesson')->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->cascadeOnUpdate()->restrictOnDelete();
+            $table->foreign('student_id')->references('id')->on('student_infos')->cascadeOnUpdate()->restrictOnDelete();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 
