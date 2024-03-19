@@ -22,6 +22,9 @@ use App\Http\Controllers\InstituteHistoryController;
 use App\Http\Controllers\PrincipalMessageController;
 use App\Http\Controllers\BackEnd\GradianInfoController;
 use App\Http\Controllers\BackEnd\StudentInfoController;
+use App\Http\Controllers\BackEnd\StudentRegistrationController;
+//use Illuminate\Support\Facades\Route;
+
 
 // User Web API Routes
 Route::post('/user-registration',[UserController::class,'UserRegistration']);
@@ -234,3 +237,4 @@ Route::view('/bolgNewsPage','pages.dashboard.blog-news-page');
 Route::view('/heroSliderPage','pages.dashboard.hero-slider-page');
 Route::view('/classPage','pages.dashboard.class-page');
 Route::view('/studentPage','pages.dashboard.student-info-page.student-info');
+Route::view('/studentRegistrationPage','pages.dashboard.student-registration-page.student-registration');
