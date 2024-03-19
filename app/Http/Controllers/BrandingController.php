@@ -48,7 +48,7 @@ class BrandingController extends Controller
     {
         try {
             $user_id = Auth::id();
-            $branding_data = Branding::where('user_id', $user_id)->get();
+            $branding_data = Branding::all();
             return response()->json(['status' => 'success', 'branding_data' => $branding_data]);
         } catch (Exception $e) {
             return response()->json(['status' => 'fail', 'message' => $e->getMessage()]);

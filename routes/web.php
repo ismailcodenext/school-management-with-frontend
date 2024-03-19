@@ -1,26 +1,27 @@
 <?php
 // front-end controller
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AdmissionFormController;
 
 // back-end controller
-use App\Http\Controllers\TeacherController;
-use App\Http\Controllers\TopbarController;
-use App\Http\Controllers\BrandingController;
-use App\Http\Controllers\FooterController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\InstituteHistoryController;
-use App\Http\Controllers\UserMessageController;
-use App\Http\Controllers\PrincipalMessageController;
-use App\Http\Controllers\PhotoGalleryController;
-use App\Http\Controllers\BlogNewsController;
-use App\Http\Controllers\SectionController;
-use App\Http\Controllers\GroupController;
-use App\Http\Controllers\HeroSliderController;
 use App\Http\Controllers\ClassController;
-use App\Http\Controllers\BackEnd\StudentInfoController;
+use App\Http\Controllers\GroupController;
+use App\Http\Controllers\FooterController;
+use App\Http\Controllers\TopbarController;
+use App\Http\Controllers\SectionController;
+use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\BlogNewsController;
+use App\Http\Controllers\BrandingController;
 use App\Http\Controllers\AdmissionController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HeroSliderController;
+use App\Http\Controllers\UserMessageController;
+use App\Http\Controllers\PhotoGalleryController;
+use App\Http\Controllers\AdmissionFormController;
+use App\Http\Controllers\InstituteHistoryController;
+use App\Http\Controllers\PrincipalMessageController;
+use App\Http\Controllers\BackEnd\GradianInfoController;
+use App\Http\Controllers\BackEnd\StudentInfoController;
 
 // User Web API Routes
 Route::post('/user-registration',[UserController::class,'UserRegistration']);
@@ -125,16 +126,16 @@ Route::view('/userMessage','pages.dashboard.usermessage-page.usermessage');
 
 
 
-// front-end-page Route
-//
+
 
 Route::get('/home',[HomeController::class,'HomePage']);
 Route::get('/topbar-list',[TopbarController::class,'index']);
 Route::get('/branding-list',[BrandingController::class,'index']);
 
+//--------------------------------- Front-End-Page Route Start---------------------------------------------
+
 
 Route::get('/admission-form',[AdmissionFormController::class,'AdmissionFormPage']);
-
 Route::view('/vice-Principal-message','pages.front-end-page.home.vice-principals-message-page');
 Route::view('/class-routing','pages.front-end-page.class-routing.class-routing-page');
 Route::view('/notice','pages.front-end-page.notice-page.class-notice-page');
@@ -143,11 +144,28 @@ Route::view('/teachers-information','pages.front-end-page.introduction.teachers-
 Route::view('/institute-gallary','pages.front-end-page.media.institute-gallary');
 Route::view('/contact-us','pages.front-end-page.contact.contact-page');
 
+//--------------------------------- Front-End-Page Route End---------------------------------------------
 
 
+//---------------------------------- Back-end View Page Api Route Start -> Robiul-------------------
+
+Route::view('/Gradian-Info','pages.dashboard/gradiant-page.gradiant');
+
+//----------------------------------Back-end View Page Api Route End -> Robiul-----------------------
 
 
+//---------------------------------- Back-end Controller Api Route Start -> Robiul-------------------
 
+// Gradian Info APi Route start
+Route::post("/create-gradian-info",[GradianInfoController::class,'GradianInfoCreate'])->middleware('auth:sanctum');
+Route::get("/list-gradian-info",[GradianInfoController::class,'GradianInfoList'])->middleware('auth:sanctum');
+Route::post("/gradian-info-by-id",[GradianInfoController::class,'GradianInfoByID'])->middleware('auth:sanctum');
+Route::post("/update-gradian-info",[GradianInfoController::class,'GradianInfoUpdate'])->middleware('auth:sanctum');
+Route::post("/delete-gradian-info",[GradianInfoController::class,'GradianInfoDelete'])->middleware('auth:sanctum');
+// Gradian Info APi Route end
+
+
+//---------------------------------- Back-end Controller Api Route End -> Robiul-------------------
 
 
 
