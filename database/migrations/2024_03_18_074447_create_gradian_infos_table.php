@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('gradian_infos', function (Blueprint $table) {
             $table->id();
-            $table->string('student_id');
+            $table->unsignedBigInteger('student_id');
             $table->string('father_name');
             $table->string('father_mobile');
             $table->string('father_profession')->nullable();
@@ -31,9 +31,8 @@ return new class extends Migration
             $table->string('guardian_relation')->nullable();
             $table->string('status')->nullable();
             $table->unsignedBigInteger('user_id');
-            // $table->unsignedBigInteger('student_id');
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnUpdate()->restrictOnDelete();
-            // $table->foreign('student_id')->references('id')->on('student_infos')->cascadeOnUpdate()->restrictOnDelete();
+             $table->foreign('student_id')->references('id')->on('student_infos')->cascadeOnUpdate()->restrictOnDelete();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });

@@ -18,14 +18,3 @@ class StudentRegistration extends Model
         'user_id',
     ];
 }
-
-
-
-
-
-
-
-
-
-
-

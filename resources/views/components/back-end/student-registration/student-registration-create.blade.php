@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-dialog-box modal-dialog-centered modal-md">
         <div class="modal-content">
             <div class="modal-header">
-                <h6 class="modal-title" style="font-size: 25px;" id="exampleModalLabel">Create New Student Admission</h6>
+                <h6 class="modal-title" style="font-size: 25px;" id="exampleModalLabel">Create Student Registration</h6>
             </div>
             <div class="modal-body">
                 <form id="save-form">
@@ -17,7 +17,7 @@
                                 <select class="form-select" id="AcademicClassName" aria-label="Default select example">
                                     <option value="">Select Class</option>
                                 </select>
-                                
+
                                 <label class="form-label">Section Name *</label>
                                 <select class="form-select" id="AcademicSectionName" aria-label="Default select example">
                                     <option value="">Section Name</option>
@@ -28,7 +28,13 @@
 
                                 </select>
                                 <label class="form-label">Session/Years *</label>
-                                <input type="text" class="form-control" id="SessonYear">
+                                <select class="form-select" id="SessonYear" aria-label="Default select example">
+                                    <option value="2024">2024</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2020">2020</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -48,7 +54,7 @@
     async function FillClassNameDropDown(){
         let res = await axios.get("/list-class",HeaderToken())
         res.data['classData'].forEach(function (item,i) {
-            let option=`<option value="${item['id']}">${item['class_name']}</option>`
+            let option=`<option value="${item['class_name']}">${item['class_name']}</option>`
             $("#AcademicClassName").append(option);
         })
     }
@@ -57,7 +63,7 @@
     async function FillSectionNameDropDown(){
         let res = await axios.get("/list-section",HeaderToken())
         res.data['section_data'].forEach(function (item,i) {
-            let option=`<option value="${item['id']}">${item['section_name']}</option>`
+            let option=`<option value="${item['section_name']}">${item['section_name']}</option>`
             $("#AcademicSectionName").append(option);
         })
     }
